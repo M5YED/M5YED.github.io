@@ -1,0 +1,829 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AssetFlow Automations</title>
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header Styling */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #080027;
+            padding: 20px 50px;
+            z-index: 1000; /* To make sure header stays on top */
+        }
+
+        /* Content inside the header */
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin-left: 100px;
+            margin-right: 20px;
+        }
+
+        h0 {
+            color: white;
+            font-family: 'Horizon', sans-serif;
+            font-size: 60px;
+            flex-grow: 1;
+        }
+        h1 {
+            color: white;
+            font-family: 'Horizon', sans-serif;
+            font-size: 36px;
+            flex-grow: 1;
+        }
+        h2 {
+            color: black;
+            font-family: 'Horizon', sans-serif;
+            font-size: 90px;
+            flex-grow: 1;
+        }
+        h3 {
+            color: black;
+            font-family: 'Horizon', sans-serif;
+            font-size: 70px;
+            flex-grow: 1;
+        }
+        h4 {
+            color: black;
+            font-family: 'Horizon', sans-serif;
+            font-size: 30px;
+            flex-grow: 1;
+        }
+        h5 {
+            color: black;
+            font-family: 'Horizon', sans-serif;
+            font-size: 20px;
+            flex-grow: 1;
+        }
+        h6 {
+            color: black;
+            font-family: 'Horizon', sans-serif;
+            font-size: 15px;
+            flex-grow: 1;
+        }
+        h7 {
+            color: black;
+            font-family: 'Horizon', sans-serif;
+            font-size: 10px;
+            flex-grow: 1;
+        }
+        h8 {
+            color: black;
+            font-family: 'Horizon', sans-serif;
+            font-size: 8px;
+            flex-grow: 1;
+        }
+        h9 {
+            color: black;
+            font-family: 'Horizon', sans-serif;
+            font-size: 6px;
+            flex-grow: 1;
+        }
+        h10 {
+            color: black;
+            font-family: 'Horizon', sans-serif;
+            font-size: 4px;
+            flex-grow: 1;
+        }
+
+        nav {
+            display: flex;
+            gap: 150px;
+        }
+
+        nav button {
+            background-color: transparent;
+            border: 2px solid #EFFE8A;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            background-color: #EFFE8A;
+            color: #080027;
+        }
+
+        /* Ensuring header doesn't overlap content */
+        body {
+            padding-top: 100px; /* Adjust based on the height of your header */
+        }
+    </style>
+</head>
+    
+<body>
+    <header>
+        <div class="header-content">
+            <!-- Company Logo -->
+            <img src="AssetFlow.png" alt="AssetFlow Automations Logo" class="logo">
+            
+            <!-- Company Name -->
+            <h1>AssetFlow Automations</h1>
+            
+            <!-- Navigation Buttons -->
+            <nav>
+                <button onclick="scrollToSection('about')">About</button>
+                <button onclick="location.href='/pricing'">Pricing</button>
+                <button onclick="location.href='/contact'">Contact</button>
+            </nav>
+        </div>
+    </header>
+
+<!-- Section 1: Content Section -->
+    <div class="section 1" style="background-color: grey; color: white; padding: 20px;">
+
+        <!-- Image Row -->
+        <center>
+            <div class="image-container">
+                <img src="websiteimage-Photoroom.png" alt="Image" width="650" height="127"">
+            </div>
+        </center>
+
+        <!-- Medium Text (Next-Gen Data Handling) -->
+        <div class="text">
+            <center><h3>Next-Gen Data Handling</center><h3>
+        </div>
+
+        <!-- Small Text (Discover the Future) -->
+        <div class="text">
+            <center><h4>Discover the Future of Documentation</center><h4>
+        </div>
+    </div>
+
+    
+    <script>
+        // Scroll behavior for the "about" button
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+
+<!-- About Section with Black Background -->
+<div id="about" class="about" style="background-color: white; color: #080027; padding: 20px;">
+    <h4 style="color: black;">About</h4>
+    <p>
+        Here at AssetFlow Automation, we strive to create impactful automations that save time for our clients. We believe time is the most valuable asset, and every second saved from repetitive admin work is a second spent on making more money.
+    </p>
+    <br>
+    <p>
+        Our automations streamline documentation processes by using Artificial Intelligence to understand inputs provided by users. We then move the information to other platforms before formatting it into the desired output.
+    </p>
+    <br>
+    <p>
+        While our systems may appear simple, they require extensive programming knowledge. We focus on making them user-friendly and straightforward, so they can be used internally or externally, depending on client preferences.
+    </p>
+    <br>
+    <br>
+</div>
+
+<!-- demo Section -->
+<div id="demos" class="demos" style="background-color: #080027; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
+    <!-- Container to center content and create two groups -->
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px;">
+        
+        <!-- Left Group, moved 50px closer -->
+        <div style="text-align: center; margin-right: 50px;">
+            <img src="google-spreadsheet-logo.png" alt="Google Sheets Logo" style="height: 300px; width: 209px; margin-bottom: 20px;">
+            <h4 style="color: white;">Data Handling</h4>
+            <h5 style="color: white;">Just answer some questions and <br>our system will do the rest!</h5>
+
+            <!-- Try Demo Button -->
+            <button id="try-demo" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
+                Try Demo
+            </button>
+        </div>
+
+        <!-- Long Vertical Line in the Center -->
+        <div style="width: 2px; height: 500px; background-color: white; margin-top: 20px; margin-bottom: 20px;"></div>
+
+        <!-- Right Group, moved 50px closer --> <!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE-->
+        <div style="text-align: center; margin-left: 50px;">
+            <img src="Google_Docs_Logo.png" alt="Google Docs Logo" style="height: 300px; width: 209px; margin-bottom: 20px;">
+            <h4 style="color: white;">Client Profile</h4>
+            <h5 style="color: white;">Give us a name and we'll give you a <br>profile of the person on Google Docs!</h5>
+
+            <!-- Another Demo Button -->
+            <button id="Coming Soon" style="padding: 10px 20px; font-size: 16px; background-color: brown; color: white; border: none; cursor: pointer; margin-top: 20px;">
+                Coming Soon
+            </button>
+        </div>
+</div>
+</div>
+
+
+
+<div style="display: flex; justify-content: center; width: 100%; background-color: #080027">
+    <div style="width: 1200px; height: 2px; background-color: white; margin-top: 20px; margin-bottom: 20px;"></div>
+</div>
+
+
+<!-- demo Section -->
+<div id="demos" class="demos" style="background-color: #080027; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
+    <!-- Container to center content and create two groups -->
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px;">
+        
+        <!-- Left Group, moved 50px closer --> <!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE-->
+        <div style="text-align: center; margin-right: 50px;">
+            <img src="Calendly_Logo.png" alt="Calendly Logo" style="height: 300px; width: 209px; margin-bottom: 20px;">
+            <h4 style="color: white;">Appointment Booking</h4>
+            <h5 style="color: white;">Set appointments up with clients <br>whenever you're free!</h5>
+
+            <!-- Try Demo Button -->
+            <button id="Coming Soon" style="padding: 10px 20px; font-size: 16px; background-color: brown; color: white; border: none; cursor: pointer; margin-top: 20px;">
+                Coming Soon
+            </button>
+        </div>
+
+        <!-- Long Vertical Line in the Center -->
+        <div style="width: 2px; height: 500px; background-color: white; margin-top: 20px; margin-bottom: 20px;"></div>
+
+        <!-- Right Group, moved 50px closer --> <!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE-->
+        <div style="text-align: center; margin-left: 50px;">
+            <img src="" alt="" style="height: 300px; width: 209px; margin-bottom: 20px;">
+            <h4 style="color: white;">To Be Continued</h4>
+            <h5 style="color: white;">We're thinking of another <br>useful automation to offer<br>if you have any ideas, <br>let us know through our Agent on <br>your right</h5>
+
+            <!-- Another Demo Button -->
+            <button id="Coming Soon" style="padding: 10px 20px; font-size: 16px; background-color: brown; color: white; border: none; cursor: pointer; margin-top: 20px;">
+                Coming Soon
+            </button>
+        </div>
+</div>
+</div>
+<div>
+
+
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '672f9a87dd74c835a2761c60' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+
+
+
+
+<script>
+document.getElementById('try-demo').addEventListener('click', function() {
+    // Load and open Voiceflow chat widget only when the button is clicked
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+            window.voiceflow.chat.load({
+                verify: { projectID: '671e28216fe4998c5977dda0' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                showInitialMessage: false,
+                showLauncher: false // Ensure launcher is hidden initially
+            }).then(() => {
+                // Open the chat widget when loaded
+                window.voiceflow.chat.open();
+
+                // Listen for the "end chat" action using the voiceflow:close event
+                window.addEventListener('message', (event) => {
+                    try {
+                        const messageData = JSON.parse(event.data);
+                        // If event is voiceflow:close, close and hide the widget
+                        if (messageData.type === 'voiceflow:close') {
+                            window.voiceflow.chat.close();
+                            window.voiceflow.chat.hide();
+                        }
+                    } catch (error) {
+                        console.error("Error parsing message event:", error);
+                    }
+                });
+            });
+        }
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+});
+</script>
+
+<!-- To Be Completed -->
+<script>
+document.getElementById(['Button Name']).addEventListener('click', function() {
+    // Load and open Voiceflow chat widget only when the button is clicked
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+            window.voiceflow.chat.load({
+                verify: { projectID: ['Project ID'] },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                showInitialMessage: false,
+                showLauncher: false // Ensure launcher is hidden initially
+            }).then(() => {
+                // Open the chat widget when loaded
+                window.voiceflow.chat.open();
+
+                // Listen for the "end chat" action using the voiceflow:close event
+                window.addEventListener('message', (event) => {
+                    try {
+                        const messageData = JSON.parse(event.data);
+                        // If event is voiceflow:close, close and hide the widget
+                        if (messageData.type === 'voiceflow:close') {
+                            window.voiceflow.chat.close();
+                            window.voiceflow.chat.hide();
+                        }
+                    } catch (error) {
+                        console.error("Error parsing message event:", error);
+                    }
+                });
+            });
+        }
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+});
+</script>
+
+<!-- To Be Completed -->
+<script>
+document.getElementById(['Button Name']).addEventListener('click', function() {
+    // Load and open Voiceflow chat widget only when the button is clicked
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+            window.voiceflow.chat.load({
+                verify: { projectID: ['Project ID'] },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                showInitialMessage: false,
+                showLauncher: false // Ensure launcher is hidden initially
+            }).then(() => {
+                // Open the chat widget when loaded
+                window.voiceflow.chat.open();
+
+                // Listen for the "end chat" action using the voiceflow:close event
+                window.addEventListener('message', (event) => {
+                    try {
+                        const messageData = JSON.parse(event.data);
+                        // If event is voiceflow:close, close and hide the widget
+                        if (messageData.type === 'voiceflow:close') {
+                            window.voiceflow.chat.close();
+                            window.voiceflow.chat.hide();
+                        }
+                    } catch (error) {
+                        console.error("Error parsing message event:", error);
+                    }
+                });
+            });
+        }
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+});
+</script>
+
+<!-- To Be Completed -->
+<script>
+document.getElementById(['Button Name']).addEventListener('click', function() {
+    // Load and open Voiceflow chat widget only when the button is clicked
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+            window.voiceflow.chat.load({
+                verify: { projectID: ['Project ID'] },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                showInitialMessage: false,
+                showLauncher: false // Ensure launcher is hidden initially
+            }).then(() => {
+                // Open the chat widget when loaded
+                window.voiceflow.chat.open();
+
+                // Listen for the "end chat" action using the voiceflow:close event
+                window.addEventListener('message', (event) => {
+                    try {
+                        const messageData = JSON.parse(event.data);
+                        // If event is voiceflow:close, close and hide the widget
+                        if (messageData.type === 'voiceflow:close') {
+                            window.voiceflow.chat.close();
+                            window.voiceflow.chat.hide();
+                        }
+                    } catch (error) {
+                        console.error("Error parsing message event:", error);
+                    }
+                });
+            });
+        }
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+});
+</script>
+
+</div>
+
+
+<br>
+<h0 style="color: black;">Services</h0>
+<div style="display: flex; justify-content: center; width: 100%; background-color: white">
+    <div style="width: 1200px; height: 2px; background-color: black; margin-top: 20px; margin-bottom: 20px;"></div>
+</div>
+<br>
+<br>
+<br>
+<div id="Services" class="Services" style="background-color: white; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
+    <!-- Container to center content and create two groups -->
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px;">
+        
+        <!-- Left Group, moved 50px closer -->
+        <div style="text-align: center; margin-right: 50px;">
+            <img src="Retainer.png" alt="Service Option 2" style="height: 651px; width: 500px; margin-bottom: 20px;">
+
+            <!-- Try Demo Button -->
+            <button id="Choose this Service" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
+                Choose this Service
+            </button>
+        </div>
+
+        <!-- Long Vertical Line in the Center -->
+        <div style="width: 2px; height: 750px; background-color: black; margin-top: 20px; margin-bottom: 20px;"></div>
+
+        <!-- Right Group, moved 50px closer --> 
+        <div style="text-align: center; margin-left: 50px;">
+            <img src="One_Time_Payment.png" alt="Service option 1" style="height: 659px; width: 500px; margin-bottom: 20px;">
+
+            <!-- Another Demo Button -->
+            <button id="Choose this Service" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
+                Choose this Service
+            </button>
+        </div>
+</div>
+</div>
+<center><p style="color: black;">Note:<br>
+- Prices may vary from £500 to £5000 depending on the complexity of the system. <br>2 or more systems can also be intertwined with each other, but you must request this when describing your system.<br>
+- A pre-payment of £100 must be made before the service begins, <br>you will be made aware of this during the process and at the specific time that we require the pre-payment.<br>
+<br>
+More information can be found when choosing your service. If you want to get in contact with the team, <br>you can find the contact details at the bottom of this page<br></p>
+    <nav style="display: flex; justify-content: center;">
+  <button onclick="scrollToSection('footer')" style="color: blue; border-color: white">
+    (click this text to scroll to the bottom)
+  </button>
+</nav>
+</center>
+
+
+<br>
+<div style="background-color: grey">
+    <br>
+    <h0 style="color: black;">Blogs</h0>
+</div>
+
+<div style="display: flex; justify-content: center; width: 100%; background-color: grey">
+    <div style="width: 1200px; height: 2px; background-color: black; margin-top: 50px; margin-bottom: 50px;"></div>
+     <div style="display: flex; justify-content: space-around; text-align: center; padding: 20px;"></div>   
+</div>
+
+<div style="display: flex; justify-content: center; width: 100%; background-color: grey">
+
+
+
+
+<body>
+    <!-- Three Groups -->
+    <div class="group">
+        <img src="Blog_Image_1.png" alt="" style="height: 237px; width: 304px; margin-bottom: 20px;">
+        <h5 style="color: white;">Maximizing Asset Management <br>Efficiency Through AI <br>Automation</h5>
+        <h7 style="color: white;">
+            <p class="intro-text">
+                In today's fast-paced business world, optimizing asset management <br>efficiency is crucial for staying competitive and thriving in the market.
+                <button class="read-more-btn" onclick="openOverlay(1)">Read More</button>
+            </p>
+        </h7>
+    </div>
+
+    <div class="group">
+        <img src="Blog_Image_2.png" alt="Calendly Logo" style="height: 237px; width: 304px; margin-bottom: 20px;">
+        <h5 style="color: white;">Boost Productivity in Asset Management with <br>AI Automation Programming</h5>
+        <h7 style="color: white;">
+            <p class="intro-text">
+                In the realm of business, efficiency and productivity are key factors that <br>can make or break a business. In the sector of asset management, <br>where time is of the essence and accuracy is paramount, leveraging technology <br>to streamline processes has become imperative. <br>This is where AI Automation Programming comes into play, revolutionizing the way asset management firms operate.
+                <button class="read-more-btn" onclick="openOverlay(2)">Read More</button>
+            </p>
+        </h7>
+    </div>
+
+    <div class="group">
+        <img src="Blog_Image_3.png" alt="" style="height: 237px; width: 304px; margin-bottom: 20px;">
+        <h5 style="color: white;">AI-Powered Document Management</h5>
+        <h7 style="color: white;">
+            <p class="intro-text">
+                Document management can be a daunting task for many businesses, <br>requiring extensive time and resources to handle paperwork, <br>data entry, and organization efficiently. However, <br>with the emergence of AI automation, solutions like those <br>offered by AssetFlow Automation, streamlining document <br>management processes have never been easier.
+                <button class="read-more-btn" onclick="openOverlay(3)">Read More</button>
+            </p>
+        </h7>
+    </div>
+
+    <!-- Backdrop for all Overlays -->
+    <div class="backdrop" onclick="closeOverlay()"></div>
+
+    <!-- Overlay Content for Each Group -->
+    <div class="overlay" id="overlay-1">
+        <button class="close-btn" onclick="closeOverlay()">×</button>
+        <p>
+            In today's fast-paced business world, optimizing asset management efficiency is crucial for staying competitive and thriving in the market. Asset management firms are constantly looking for innovative solutions to streamline their operations and increase productivity. This is where AI automation comes into play, revolutionizing the way assets are managed and enabling businesses to achieve better results in less time.
+            <!-- (Additional content here) -->In today's fast-paced business world, optimizing asset management efficiency is crucial for staying competitive and thriving in the market. Asset management firms/companies are constantly looking for innovative solutions to streamline their operations and increase productivity. This is where AI automation comes into play, revolutionizing the way assets are managed and enabling businesses to achieve better results in less time.<br><br>
+
+
+
+AssetFlow Automations is at the forefront of this technological revolution, offering cutting-edge AI automation programming services to asset management firms/companies. With a strong focus on data entry and document management, AssetFlow Automations helps businesses leverage the power of artificial intelligence to enhance their overall efficiency and effectiveness.<br><br>
+
+
+
+So, how exactly does AI automation maximize asset management efficiency?<br><br>
+
+
+
+By implementing AI systems, asset management firms/companies can automate repetitive tasks such as data entry, sorting, and organizing documents. This not only helps save time and reduce human errors but also allows employees to focus on more high-value tasks that require human intelligence and creativity.<br><br>
+
+
+
+Furthermore, AI automation can analyze and interpret vast amounts of data at a speed and accuracy that surpasses human capabilities. This enables asset management firms/companies to make more informed decisions, identify trends, and opportunities, and ultimately, maximize their asset management efficiency.<br><br> 
+
+
+
+At AssetFlow Automations, the goal is to empower businesses to work smarter, not harder. By providing secure services, transparent pricing, and exceptional customer support, AssetFlow Automations is dedicated to helping asset management firms/companies achieve their full potential and reach new heights of success.<br><br> 
+
+
+
+In conclusion, AI automation is a game-changer for companies looking to enhance their efficiency and productivity. By harnessing the power of artificial intelligence, businesses can streamline their operations, make better-informed decisions, and ultimately, achieve greater success in the ever-evolving business landscape. With AssetFlow Automations leading the way, the future of documentation looks brighter than ever.<br>
+        </p>
+    </div>
+
+    <div class="overlay" id="overlay-2">
+        <button class="close-btn" onclick="closeOverlay()">×</button>
+        <p>
+            In the realm of business, efficiency and productivity are key factors that can make or break a business. In the sector of asset management, where time is of the essence and accuracy is paramount, leveraging technology to streamline processes has become imperative. This is where AI Automation Programming comes into play, revolutionizing the way asset management firms operate.
+            <!-- (Additional content here) --> In today's fast-paced world, efficiency and productivity are key factors that can make or break a business. In the realm of asset management, where time is of the essence and accuracy is paramount, leveraging technology to streamline processes has become imperative. This is where AI Automation Programming comes into play, revolutionizing the way asset management firms operate.<br><br>
+
+
+
+AssetFlow Automations is at the forefront of this technological advancement, offering cutting-edge AI systems that are designed to boost productivity in asset management. Specializing in services such as Data Entry and Document Management, AssetFlow Automations is dedicated to helping companies optimize their operations and achieve greater efficiency. By harnessing the power of AI automation, asset management firms can significantly reduce the time and resources spent on manual data entry and document management tasks. This not only frees up valuable human resources to focus on more strategic activities but also minimizes the risk of errors that are inherent in manual processes.<br><br>
+
+
+
+One of the key advantages of AI automation programming is its ability to analyze large volumes of data at incredible speeds, enabling asset management firms to make informed decisions quickly and accurately. These AI systems can also adapt to changing market conditions and regulatory requirements, ensuring that firms remain agile and compliant in a dynamic environment.<br><br>
+
+
+
+Moreover, the security features offered by AI systems provide an added layer of protection for sensitive client data, giving asset management firms and their clients peace of mind knowing that their information is secure.<br><br> 
+
+
+
+With an extensive expertise in automation programing, AssetFlow Automations is ready to help firms streamline their processes and optimize their operations. With a user-friendly website that offers detailed information on their AI systems and secure service purchases, AssetFlow Automations is quickly becoming a trusted partner for asset management firms looking to enhance productivity and stay ahead of the curve.<br><br>
+
+
+
+In conclusion, AI automation programming is a game-changer for asset management firms, offering a powerful tool to boost productivity, streamline operations, and improve decision-making processes. As technology continues to evolve, firms that embrace AI automation will undoubtedly gain a competitive edge in the market.<br>
+        </p>
+    </div>
+
+    <div class="overlay" id="overlay-3">
+        <button class="close-btn" onclick="closeOverlay()">×</button>
+        <p>
+            Document management can be a daunting task for many businesses, requiring extensive time and resources to handle paperwork, data entry, and organization efficiently. However, with the emergence of AI automation, solutions like those offered by AssetFlow Automation, streamlining document management processes have never been easier.
+            <!-- (Additional content here) -->Document management can be a daunting task for many businesses, requiring extensive time and resources to handle paperwork, data entry, and organization efficiently. However, with the emergence of AI automation, solutions like those offered by AssetFlow Automation, streamlining document management processes have never been easier.<br><br>
+
+
+
+AssetFlow Automations specializes in AI automation programming, specifically catering to asset management firms and companies looking to boost productivity and efficiency through automated systems. With a keen focus on data entry and document management, AssetFlow Automations's services are designed to simplify and expedite the management of large volumes of information.<br><br>
+
+
+
+By harnessing the power of artificial intelligence, AssetFlow Automations can automate repetitive tasks such as data entry, document organization, and data processing. This not only reduces the risk of human error but also significantly speeds up the document management process, allowing businesses to focus on more critical tasks at hand.<br><br>
+
+
+
+One of the key selling points of AssetFlow Automations's services is the emphasis on security. In today's digital age, data security is of utmost importance, especially when handling sensitive information. AssetFlow Automation ensures that all data handled through their AI systems is encrypted and secure, giving clients peace of mind knowing that their information is protected.<br><br> 
+
+
+
+Whether you are a small business looking to streamline your document management processes or a large asset management firm in need of efficient data entry solutions, AssetFlow Automations has the tools and expertise to meet your needs.<br><br>
+
+
+
+In conclusion, for businesses looking to enhance productivity, reduce costs, and improve data security, AssetFlow Automations's AI automation solutions are a game-changer. By leveraging the power of artificial intelligence, businesses can streamline their document management processes like never before. Say goodbye to tedious paperwork and hello to a more efficient and secure way of managing your documents with AssetFlow Automations.<br>
+        </p>
+    </div>
+
+    <!-- JavaScript for the overlay functionality -->
+    <script>
+        function openOverlay(id) {
+            // Hide all overlays before showing the selected one
+            document.querySelectorAll(".overlay").forEach(overlay => {
+                overlay.classList.remove("visible");
+            });
+            document.getElementById(`overlay-${id}`).classList.add("visible");
+            document.querySelector(".backdrop").classList.add("visible");
+        }
+
+        function closeOverlay() {
+            document.querySelectorAll(".overlay").forEach(overlay => {
+                overlay.classList.remove("visible");
+            });
+            document.querySelector(".backdrop").classList.remove("visible");
+        }
+    </script>
+
+    <!-- CSS for the overlay and backdrop styling -->
+    <style>
+        /* Basic styling for groups */
+        .group {
+            margin: 20px;
+            text-align: center;
+        }
+
+        /* Overlay styling */
+        .overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: none;
+            z-index: 10;
+        }
+
+        .overlay.visible {
+            display: block;
+        }
+
+        /* Backdrop styling */
+        .backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            z-index: 5;
+        }
+
+        .backdrop.visible {
+            display: block;
+        }
+
+        /* Close button styling */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #333;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        /* Overlay styling with scrollable content */
+.overlay {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling if content is too long */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 10;
+}
+
+.overlay.visible {
+    display: block;
+}
+    </style>
+</body>
+</div>
+
+
+
+<!-- Footer with Subscribe Form -->
+<footer id="footer"; class= "footer"; style="background-color: #EFFE8A; padding: 20px; text-align: center;">
+    <!-- Footer Heading -->
+    <h2 style="color: black; margin-bottom: 10px;">AssetFlow Automations</h2>
+
+    <!-- Subscribe Form -->
+    <form id="subscribeForm" action="#" method="POST" onsubmit="submitToAirtable(event)">
+        <!-- Subscribe Heading -->
+        <h6 style="color: black;">Subscribe to our newsletter</h6>
+
+        <!-- Email Prompt -->
+        <h7 style="color: black; display: block; margin-top: 10px;">Enter your email</h7>
+
+        <!-- Email Input Field -->
+        <div style="margin: 10px auto; width: 60%; position: relative;">
+            <input 
+                type="email" 
+                name="email" 
+                placeholder="example@email.com" 
+                style="display: block; width: 100%; padding: 8px; border: none; border-bottom: 1px solid black; color: red; text-align: center;"
+                required>
+        </div>
+
+        <!-- Subscribe Button -->
+        <button type="submit" style="background-color: black; color: #EFFE8A; padding: 10px 20px; border: none; border-radius: 20px; cursor: pointer;">
+            Subscribe
+        </button>
+    </form>
+    <br>
+    <br>
+    <h5><ul>Contact Us</ul></h5>
+    <br>
+    <h6>Whatsapp Business: 07887 333872</h6>
+    <br>
+    <h6>support@assetflowautomations.com</h6>
+</footer>
+
+<!-- JavaScript for Airtable Integration -->
+<script>
+    function submitToAirtable(event) {
+        event.preventDefault();
+        const email = document.querySelector('input[name="email"]').value;
+
+        // Replace with your Airtable base ID and table name
+        const baseId = 'appHdf8GqdnnZ8eQE'; // Replace with your Airtable base ID
+        const tableName = 'Table%201'; // Replace with your Airtable table name
+        const airtableUrl = `https://api.airtable.com/v0/${baseId}/${tableName}`;
+
+        // Replace with your Airtable API key
+        const apiKey = 'patb0pXMNIXvXABCA.8225b205c549ce52bb118a86e4df78675668274cff5e6f71d8db0280d854dcff'; // Replace with your Airtable API Key
+
+        // Create the record for Airtable
+        const data = {
+            fields: {
+                Email: email // Replace 'Email' with the actual field name in Airtable
+            }
+        };
+
+        // Make the POST request to Airtable API
+        fetch(airtableUrl, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert('Thank you for subscribing!');
+            document.getElementById('subscribeForm').reset();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>
+
+
+</html>
