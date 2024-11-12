@@ -22,7 +22,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 100vw;
             background-color: #080027;
             padding: 20px 50px;
             z-index: 1000; /* To make sure header stays on top */
@@ -127,34 +127,92 @@
             background-color: #EFFE8A;
             color: #080027;
         }
+        /* Full-screen overlay for the intro */
+        #intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #080027;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
 
+        /* Rotating circle with arrows */
+        .spinner {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            animation: rotate 3s linear infinite;
+        }
+
+        /* Style for each arrow */
+        .arrow {
+            width: 20px;
+            height: 40px;
+            background-color: #EFFE8A;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform-origin: 0 40px;
+            transform: rotate(0deg);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 30% 50%);
+            border-radius: 10px 0 0 10px; /* Round body, sharp head */
+        }
+
+        /* Positioning each arrow at 90-degree intervals */
+        .arrow:nth-child(1) { transform: rotate(0deg); }
+        .arrow:nth-child(2) { transform: rotate(90deg); }
+        .arrow:nth-child(3) { transform: rotate(180deg); }
+        .arrow:nth-child(4) { transform: rotate(270deg); }
+
+        /* Rotation animation */
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Fade-out effect */
+        .fade-out {
+            animation: fadeOut 1s ease forwards;
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
         /* Ensuring header doesn't overlap content */
         body {
             padding-top: 100px; /* Adjust based on the height of your header */
         }
-        #mobileWarning {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
-      font-size: 1.2rem;
-      text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
-      z-index: 1000;
-        }
     </style>
 </head>
-    
+
+
 <body>
-    <header>
+    <!-- Intro overlay -->
+    <div id="intro">
+        <div class="spinner">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+        </div>
+    </div>
+
+    <!-- Main website content -->
+    <div id="main-content" style="display: none;">
+        <!-- Your main content here -->
+<body style="max-width: 100vw;">
+    <header style="max-width: 100vw;">
         <div class="header-content">
             <!-- Company Logo -->
-            <img src="AssetFlow.png" alt="AssetFlow Automations Logo" class="logo">
+            <a href="javascript:location.reload();">
+    <img src="AssetFlow.png" alt="AssetFlow Automations Logo" class="logo" style="cursor: pointer;">
+</a>
+
             
             <!-- Company Name -->
             <h1>AssetFlow Automations</h1>
@@ -169,46 +227,24 @@
     </header>
 
 
-<body>
-
-  <div id="mobileWarning">
-    <p>This website is not compatible with mobile devices. Please use a desktop or laptop to view this content.</p>
-  </div>
-
-  <script>
-    // Ensures all code runs only after the HTML content is fully loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      
-      // Check if the device is mobile
-      function isMobileDevice() {
-        return /Mobi|Android/i.test(navigator.userAgent);
-      }
-      
-      // Display the mobile warning if a mobile device is detected
-      if (isMobileDevice()) {
-        document.getElementById("mobileWarning").style.display = "block";
-      }
-
-      // Example of adding more event listeners or functions within this block
-      // document.getElementById("someOtherElement").addEventListener("click", function() {
-      //   // Your code here<!-- Section 1: Content Section -->
+<div style="max-width: 100vw; background-color: grey;">
           <!-- Section 1: Content Section -->
-    <div class="section 1" style="background-color: grey; color: white; padding: 20px;">
+    <div class="section 1" style="background-color: grey; color: white; padding: 20px; max-width: 100vw;">
 
         <!-- Image Row -->
         <center>
-            <div class="image-container">
-                <img src="websiteimage-Photoroom.png" alt="Image" width="650" height="127"">
+            <div class="image-container" style="background-color: grey;">
+            <img src="websiteimage-Photoroom.png" alt="Image" style="width: 40vw; height: auto; max-width: 100%;">
             </div>
         </center>
 
         <!-- Medium Text (Next-Gen Data Handling) -->
-        <div class="text">
+        <div class="text" style="max-width: 100vw; background-color: grey;">
             <center><h3>Next-Gen Data Handling</center><h3>
         </div>
 
         <!-- Small Text (Discover the Future) -->
-        <div class="text">
+        <div class="text" style="max-width: 100vw; background-color: grey;">
             <center><h4>Discover the Future of Documentation</center><h4>
         </div>
     </div>
@@ -221,43 +257,16 @@
             section.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
-</body>
+</div>
 
     
     <div class="section 1" style="background-color: grey; color: white; padding: 20px;">
-
-        <!-- Image Row -->
-        <center>
-            <div class="image-container">
-                <img src="websiteimage-Photoroom.png" alt="Image" width="650" height="127"">
-            </div>
-        </center>
-
-        <!-- Medium Text (Next-Gen Data Handling) -->
-        <div class="text">
-            <center><h3>Next-Gen Data Handling</center><h3>
-        </div>
-
-        <!-- Small Text (Discover the Future) -->
-        <div class="text">
-            <center><h4>Discover the Future of Documentation</center><h4>
-        </div>
-    </div>
-
-    
-    <script>
-        // Scroll behavior for the "about" button
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
-</body>
+</div>
 
 
 
 <!-- About Section with Black Background -->
-<div id="about" class="about" style="background-color: white; color: #080027; padding: 20px;">
+<div id="about" class="about" style="background-color: white; color: #080027; padding: 20px; max-width: 100vw;">
     <h4 style="color: black;">About</h4>
     <p>
         Here at AssetFlow Automation, we strive to create impactful automations that save time for our clients. We believe time is the most valuable asset, and every second saved from repetitive admin work is a second spent on making more money.
@@ -275,17 +284,76 @@
 </div>
 
 
-<h3 style="background-color: #080027; color: white;">Interactive Demos</h3>
-<!-- demo Section -->
-<div id="demos" class="demos" style="background-color: #080027; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
-    <!-- Container to center content and create two groups -->
-    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 100vw;">
+<h3 style="background-color: #080027; color: white; text-align: center; max-width: 100vw;">Interactive Demos</h3>
+
+<!-- Demo Section -->
+<div id="demos" class="demos" style="background-color: #080027; color: white; padding: 20px; max-width: 100vw;">
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%; max-width: 100vw; gap: 10vw; padding: 0 20px; box-sizing: border-box;">
         
-        <!-- Left Group, moved 50px closer -->
-        <div style="text-align: center; margin-right: 50px;">
-            <img src="google-spreadsheet-logo.png" alt="Google Sheets Logo" style="height: 300px; width: 209px; margin-bottom: 20px;">
+        <!-- Left Group -->
+        <div style="text-align: center;">
+            <img src="google-spreadsheet-logo.png" alt="Google Sheets Logo" style="width: 20vw; height: auto; margin-bottom: 20px;">
             <h4 style="color: white;">Data Handling</h4>
             <h5 style="color: white;">Just answer some questions and <br>our system will do the rest!</h5>
+            <!-- Try Demo Button -->
+            <button id="try-demo" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
+                Try Demo
+            </button>
+        </div>
+
+        <!-- Long Vertical Line in the Center -->
+        <div class="vertical-line" style="width: 2px; background-color: white;"></div>
+
+        <!-- Right Group -->
+        <div style="text-align: center;">
+            <img src="Google_Docs_Logo.png" alt="Google Docs Logo" style="width: 20vw; height: auto; margin-bottom: 20px;">
+            <h4 style="color: white;">Client Profile</h4>
+            <h5 style="color: white;">Give us a name and we'll give you a <br>profile of the person on Google Docs!</h5>
+            <!-- Another Demo Button -->
+            <button id="Coming Soon" style="padding: 10px 20px; font-size: 16px; background-color: brown; color: white; border: none; cursor: pointer; margin-top: 20px;">
+                Coming Soon
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Horizontal Divider Line -->
+<div style="display: flex; justify-content: center; width: 100%; background-color: #080027; max-width: 100vw;">
+    <div style="width: 100vw; height: 2px; background-color: white; margin-top: 20px; margin-bottom: 20px;"></div>
+</div>
+
+<!-- Media Query for Mobile Screens -->
+<style>
+    /* Default Styling for Desktop */
+    .vertical-line {
+        height: 500px; /* Set default height for desktop */
+        align-self: stretch; /* Ensure it stretches to content height */
+    }
+    @media (max-width: 768px) {
+        #demos > div {
+            flex-direction: column;
+            align-items: center;
+        }
+        #demos div > div {
+            margin: 20px 0;
+    }
+        .vertical-line {
+            height: 200px; /* Adjust height to fit mobile
+
+</style>
+
+
+
+
+<!-- Demo Section -->
+<div id="demos" class="demos" style="background-color: #080027; color: white; padding: 20px; max-width: 100vw;">
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%; max-width: 100vw; gap: 10vw; padding: 0 20px; box-sizing: border-box;">
+        
+        <!-- Left Group -->
+        <div style="text-align: center;">
+            <img src="Calendly_Logo.png" alt="Calendly Logo" style="width: 20vw; height: auto; margin-bottom: 20px;">
+            <h4 style="color: white;">Appointment Booking</h4>
+            <h5 style="color: white;">Set appointments up with clients <br>whenever you're free!</h5>
 
             <!-- Try Demo Button -->
             <button id="try-demo" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
@@ -294,63 +362,43 @@
         </div>
 
         <!-- Long Vertical Line in the Center -->
-        <div style="width: 2px; height: 500px; background-color: white; margin-top: 20px; margin-bottom: 20px;"></div>
+        <div class="vertical-line" style="width: 2px; background-color: white;"></div>
 
-        <!-- Right Group, moved 50px closer --> <!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE-->
-        <div style="text-align: center; margin-left: 50px;">
-            <img src="Google_Docs_Logo.png" alt="Google Docs Logo" style="height: 300px; width: 209px; margin-bottom: 20px;">
-            <h4 style="color: white;">Client Profile</h4>
-            <h5 style="color: white;">Give us a name and we'll give you a <br>profile of the person on Google Docs!</h5>
-
-            <!-- Another Demo Button -->
-            <button id="Coming Soon" style="padding: 10px 20px; font-size: 16px; background-color: brown; color: white; border: none; cursor: pointer; margin-top: 20px;">
-                Coming Soon
-            </button>
-        </div>
-</div>
-</div>
-
-
-
-<div style="display: flex; justify-content: center; width: 100%; background-color: #080027">
-    <div style="width: 100vw; height: 2px; background-color: white; margin-top: 20px; margin-bottom: 20px;"></div>
-</div>
-
-
-<!-- demo Section -->
-<div id="demos" class="demos" style="background-color: #080027; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
-    <!-- Container to center content and create two groups -->
-    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 100vw;">
-        
-        <!-- Left Group, moved 50px closer --> <!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE-->
-        <div style="text-align: center; margin-right: 50px;">
-            <img src="Calendly_Logo.png" alt="Calendly Logo" style="height: 300px; width: 209px; margin-bottom: 20px;">
-            <h4 style="color: white;">Appointment Booking</h4>
-            <h5 style="color: white;">Set appointments up with clients <br>whenever you're free!</h5>
-
-            <!-- Try Demo Button -->
-            <button id="Coming Soon" style="padding: 10px 20px; font-size: 16px; background-color: brown; color: white; border: none; cursor: pointer; margin-top: 20px;">
-                Coming Soon
-            </button>
-        </div>
-
-        <!-- Long Vertical Line in the Center -->
-        <div style="width: 2px; height: 500px; background-color: white; margin-top: 20px; margin-bottom: 20px;"></div>
-
-        <!-- Right Group, moved 50px closer --> <!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE-->
-        <div style="text-align: center; margin-left: 50px;">
-            <img src="" alt="" style="height: 300px; width: 209px; margin-bottom: 20px;">
+        <!-- Right Group -->
+        <div style="text-align: center;">
+            <img src="" alt="" style="width: 20vw; height: auto; margin-bottom: 20px;">
             <h4 style="color: white;">To Be Continued</h4>
             <h5 style="color: white;">We're thinking of another <br>useful automation to offer<br>if you have any ideas, <br>let us know through our Agent on <br>your right</h5>
-
+            
             <!-- Another Demo Button -->
             <button id="Coming Soon" style="padding: 10px 20px; font-size: 16px; background-color: brown; color: white; border: none; cursor: pointer; margin-top: 20px;">
                 Coming Soon
             </button>
         </div>
+    </div>
+<br><br><br>
 </div>
-</div>
-<div>
+
+
+<!-- Media Query for Mobile Screens -->
+<style>
+    /* Default Styling for Desktop */
+    .vertical-line {
+        height: 500px; /* Set default height for desktop */
+        align-self: stretch; /* Ensure it stretches to content height */
+    }
+    @media (max-width: 768px) {
+        #demos > div {
+            flex-direction: column;
+            align-items: center;
+        }
+        #demos div > div {
+            margin: 20px 0;
+    }
+        .vertical-line {
+            height: 200px; /* Adjust height to fit mobile
+
+</style>
 
 
 <script type="text/javascript">
@@ -525,24 +573,23 @@ document.getElementById(['Button Name']).addEventListener('click', function() {
 });
 </script>
 
-</div>
 
 
-<br>
+<div style="background-color: white; max-width: 100vw;">    
 <h0 style="color: black;">Services</h0>
-<div style="display: flex; justify-content: center; width: 100%; background-color: white">
+<div style="display: flex; justify-content: center; width: 100%; background-color: white; max-width: 100vw;">
     <div style="width: 100vw; height: 2px; background-color: black; margin-top: 20px; margin-bottom: 20px;"></div>
 </div>
-<br>
-<br>
-<br>
+</div>
+
+
 <div id="Services" class="Services" style="background-color: white; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
     <!-- Outer container with full viewport width and padding for spacing -->
-    <div style="display: flex; justify-content: space-between; align-items: center; width: 100vw; padding: 0 50px; gap: 50px; box-sizing: border-box;">
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100vw; padding: 0 50px; gap: 50px; box-sizing: border-box; max-width: 100vw;">
         
         <!-- Left Group -->
-        <div style="text-align: center;">
-            <img src="One_Time_Payment.png" alt="Service Option 1" style="height: 651px; width: 500px; margin-bottom: 20px;">
+        <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <img src="One_Time_Payment.png" alt="Service Option 1" style="width: 30vw; height: auto; margin-bottom: 20px;">
             <!-- Pricing Button under image -->
             <button onclick="location.href='https://pricing.assetflowautomations.com/'" id="Pricing" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
                 Pricing
@@ -550,11 +597,11 @@ document.getElementById(['Button Name']).addEventListener('click', function() {
         </div>
 
         <!-- Vertical Line centered -->
-        <div style="width: 2px; height: 750px; background-color: black;"></div>
+        <div id="vertical-line" style="width: 2px; height: 750px; background-color: black;"></div>
 
         <!-- Right Group -->
-        <div style="text-align: center;">
-            <img src="Retainer.png" alt="Service Option 2" style="height: 659px; width: 500px; margin-bottom: 20px;">
+        <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <img src="Retainer.png" alt="Service Option 2" style="width: 30vw; height: auto; margin-bottom: 20px;">
             <!-- Pricing Button under image -->
             <button onclick="location.href='https://pricing.assetflowautomations.com/'" id="Pricing" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
                 Pricing
@@ -563,36 +610,57 @@ document.getElementById(['Button Name']).addEventListener('click', function() {
     </div>
 </div>
 
-<center><p style="color: black;">Note:<br>
-- Prices may vary from £500 to £5000 depending on the complexity of the system. <br>2 or more systems can also be intertwined with each other, but you must request this when describing your system.<br>
-- A pre-payment of £100 must be made before the service begins, <br>you will be made aware of this during the process and at the specific time that we require the pre-payment.<br>
-<br>
-More information can be found when choosing your service. If you want to get in contact with the team, <br>you can find the contact details at the bottom of this page<br></p>
-    <nav style="display: flex; justify-content: center;">
-  <button onclick="scrollToSection('footer')" style="color: blue; border-color: white">
-    (click this text to scroll to the bottom)
-  </button>
-</nav>
-</center>
+<!-- Media query for responsive styling -->
+<style>
+    /* Adjust vertical line height on smaller screens */
+    @media (max-width: 768px) {
+        #vertical-line {
+            height: 300px; /* Reduced height for mobile */
+        }
+    }
+</style>
 
 
-<br>
-<div style="background-color: grey">
-    <br>
-    <h0 style="color: black;">Blogs</h0>
+
+    
+<div style="background-color: white; color: white; max-width: 100vw;">
+    <div style="text-align: center;">
+        <p style="color: black;">Note:<br>
+            - Prices may vary from £500 to £5000 depending on the complexity of the system. <br>
+            2 or more systems can also be intertwined with each other, but you must request this when describing your system.<br>
+            - A pre-payment of £100 must be made before the service begins, <br>
+            you will be made aware of this during the process and at the specific time that we require the pre-payment.<br>
+            <br>
+            More information can be found when choosing your service. If you want to get in contact with the team, <br>
+            you can find the contact details at the bottom of this page.<br>
+        </p>
+        <nav style="display: flex; justify-content: center; margin-top: 10px;">
+            <button onclick="scrollToSection('footer')" style="color: blue; border: 1px solid white; background-color: transparent; cursor: pointer;">
+                (click this text to scroll to the bottom)
+            </button>
+        </nav>
+    </div>
 </div>
 
-<div style="display: flex; justify-content: center; width: 100%; background-color: grey">
-    <div style="width: 100vw; height: 2px; background-color: black; margin-top: 50px; margin-bottom: 50px;"></div>
-     <div style="display: flex; justify-content: space-around; text-align: center; padding: 20px;"></div>   
+
+
+<br><br>
+<div style="background-color: grey; max-width: 100vw;">
+<h0 style="color: black;">Blogs</h0>
+<div>
+
+<div style="width: 100%; background-color: grey; padding: 50px 0; display: flex; justify-content: center;">
+    <!-- Horizontal line with controlled max width -->
+    <div style="width: 100%; max-width: 100vw; height: 2px; background-color: black;"></div>
 </div>
 
+
 <div style="display: flex; justify-content: center; width: 100%; background-color: grey">
 
 
 
 
-<body>
+<body style="max-width: 100vw;">
     <!-- Three Groups -->
     <div class="group">
         <img src="Blog_Image_1.png" alt="" style="height: 237px; width: 304px; margin-bottom: 20px;">
@@ -821,7 +889,7 @@ In conclusion, for businesses looking to enhance productivity, reduce costs, and
 
 
 <!-- Footer with Subscribe Form -->
-<footer id="footer"; class= "footer"; style="background-color: #EFFE8A; padding: 20px; text-align: center;">
+<footer id="footer"; class= "footer"; style="background-color: #EFFE8A; padding: 20px; text-align: center; max-width: 100vw;">
     <!-- Footer Heading -->
     <h1 style="color: black; margin-bottom: 10px;">AssetFlow Automations</h1>
 
@@ -895,6 +963,16 @@ In conclusion, for businesses looking to enhance productivity, reduce costs, and
         .catch(error => console.error('Error:', error));
     }
 </script>
+</div>
+</div>
+</div>
 
-
+    <script>
+        // Show main content after intro and hide intro with fade effect
+        setTimeout(() => {
+            document.getElementById("intro").classList.add("fade-out");
+            document.getElementById("main-content").style.display = "block";
+        }, 3000); // 3 seconds
+    </script>
+</body>
 </html>
