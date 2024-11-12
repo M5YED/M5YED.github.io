@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AssetFlow Automations</title>
     <style>
         /* General Styling */
@@ -170,6 +170,60 @@
 
 
 <body>
+
+  <div id="mobileWarning">
+    <p>This website is not compatible with mobile devices. Please use a desktop or laptop to view this content.</p>
+  </div>
+
+  <script>
+    // Ensures all code runs only after the HTML content is fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      
+      // Check if the device is mobile
+      function isMobileDevice() {
+        return /Mobi|Android/i.test(navigator.userAgent);
+      }
+      
+      // Display the mobile warning if a mobile device is detected
+      if (isMobileDevice()) {
+        document.getElementById("mobileWarning").style.display = "block";
+      }
+
+      // Example of adding more event listeners or functions within this block
+      // document.getElementById("someOtherElement").addEventListener("click", function() {
+      //   // Your code here<!-- Section 1: Content Section -->
+          <!-- Section 1: Content Section -->
+    <div class="section 1" style="background-color: grey; color: white; padding: 20px;">
+
+        <!-- Image Row -->
+        <center>
+            <div class="image-container">
+                <img src="websiteimage-Photoroom.png" alt="Image" width="650" height="127"">
+            </div>
+        </center>
+
+        <!-- Medium Text (Next-Gen Data Handling) -->
+        <div class="text">
+            <center><h3>Next-Gen Data Handling</center><h3>
+        </div>
+
+        <!-- Small Text (Discover the Future) -->
+        <div class="text">
+            <center><h4>Discover the Future of Documentation</center><h4>
+        </div>
+    </div>
+
+    
+    <script>
+        // Scroll behavior for the "about" button
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+    
     <div class="section 1" style="background-color: grey; color: white; padding: 20px;">
 
         <!-- Image Row -->
@@ -225,7 +279,7 @@
 <!-- demo Section -->
 <div id="demos" class="demos" style="background-color: #080027; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
     <!-- Container to center content and create two groups -->
-    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 100vw;">
         
         <!-- Left Group, moved 50px closer -->
         <div style="text-align: center; margin-right: 50px;">
@@ -259,14 +313,14 @@
 
 
 <div style="display: flex; justify-content: center; width: 100%; background-color: #080027">
-    <div style="width: 1200px; height: 2px; background-color: white; margin-top: 20px; margin-bottom: 20px;"></div>
+    <div style="width: 100vw; height: 2px; background-color: white; margin-top: 20px; margin-bottom: 20px;"></div>
 </div>
 
 
 <!-- demo Section -->
 <div id="demos" class="demos" style="background-color: #080027; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
     <!-- Container to center content and create two groups -->
-    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 100vw;">
         
         <!-- Left Group, moved 50px closer --> <!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE--><!-- FILL IN ONCE COMPLETE-->
         <div style="text-align: center; margin-right: 50px;">
@@ -477,39 +531,38 @@ document.getElementById(['Button Name']).addEventListener('click', function() {
 <br>
 <h0 style="color: black;">Services</h0>
 <div style="display: flex; justify-content: center; width: 100%; background-color: white">
-    <div style="width: 1200px; height: 2px; background-color: black; margin-top: 20px; margin-bottom: 20px;"></div>
+    <div style="width: 100vw; height: 2px; background-color: black; margin-top: 20px; margin-bottom: 20px;"></div>
 </div>
 <br>
 <br>
 <br>
 <div id="Services" class="Services" style="background-color: white; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
-    <!-- Container to center content and create two groups -->
-    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px;">
+    <!-- Outer container with full viewport width and padding for spacing -->
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100vw; padding: 0 50px; gap: 50px; box-sizing: border-box;">
         
-        <!-- Left Group, moved 50px closer -->
-        <div style="text-align: center; margin-right: 50px;">
+        <!-- Left Group -->
+        <div style="text-align: center;">
             <img src="One_Time_Payment.png" alt="Service Option 1" style="height: 651px; width: 500px; margin-bottom: 20px;">
-
-            <!-- service Button -->
-            <button onclick="location.href='pricing.assetflowautomations.com'" id="Pricing" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
+            <!-- Pricing Button under image -->
+            <button onclick="location.href='https://pricing.assetflowautomations.com/'" id="Pricing" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
                 Pricing
             </button>
         </div>
 
-        <!-- Long Vertical Line in the Center -->
-        <div style="width: 2px; height: 750px; background-color: black; margin-top: 20px; margin-bottom: 20px;"></div>
+        <!-- Vertical Line centered -->
+        <div style="width: 2px; height: 750px; background-color: black;"></div>
 
-        <!-- Right Group, moved 50px closer --> 
-        <div style="text-align: center; margin-left: 50px;">
-            <img src="Retainer.png" alt="Service option 2" style="height: 659px; width: 500px; margin-bottom: 20px;">
-
-            <!-- Another service Button -->
-            <button onclick="location.href='pricing.assetflowautomations.com'" id="Pricing" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
+        <!-- Right Group -->
+        <div style="text-align: center;">
+            <img src="Retainer.png" alt="Service Option 2" style="height: 659px; width: 500px; margin-bottom: 20px;">
+            <!-- Pricing Button under image -->
+            <button onclick="location.href='https://pricing.assetflowautomations.com/'" id="Pricing" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
                 Pricing
             </button>
         </div>
+    </div>
 </div>
-</div>
+
 <center><p style="color: black;">Note:<br>
 - Prices may vary from £500 to £5000 depending on the complexity of the system. <br>2 or more systems can also be intertwined with each other, but you must request this when describing your system.<br>
 - A pre-payment of £100 must be made before the service begins, <br>you will be made aware of this during the process and at the specific time that we require the pre-payment.<br>
@@ -530,7 +583,7 @@ More information can be found when choosing your service. If you want to get in 
 </div>
 
 <div style="display: flex; justify-content: center; width: 100%; background-color: grey">
-    <div style="width: 1200px; height: 2px; background-color: black; margin-top: 50px; margin-bottom: 50px;"></div>
+    <div style="width: 100vw; height: 2px; background-color: black; margin-top: 50px; margin-bottom: 50px;"></div>
      <div style="display: flex; justify-content: space-around; text-align: center; padding: 20px;"></div>   
 </div>
 
