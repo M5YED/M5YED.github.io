@@ -577,21 +577,19 @@ document.getElementById(['Button Name']).addEventListener('click', function() {
 
 
 <div style="background-color: white; max-width: 100vw;">    
-<h0 style="color: black;">Services</h0>
-<div style="display: flex; justify-content: center; width: 100%; background-color: white; max-width: 100vw;">
-    <div style="width: 100vw; height: 2px; background-color: black; margin-top: 20px; margin-bottom: 20px;"></div>
+    <h1 style="color: black; text-align: center;">Services</h1>
+    <div style="display: flex; justify-content: center; width: 100%; background-color: white; max-width: 100vw;">
+        <div style="width: 100%; height: 2px; background-color: black; margin-top: 20px; margin-bottom: 20px;"></div>
+    </div>
 </div>
-</div>
-
 
 <div id="Services" class="Services" style="background-color: white; color: white; padding: 20px; display: flex; justify-content: center; align-items: center;">
     <!-- Outer container with full viewport width and padding for spacing -->
-    <div style="display: flex; justify-content: space-between; align-items: center; width: 100vw; padding: 0 50px; gap: 50px; box-sizing: border-box; max-width: 100vw;">
+    <div class="services-container" style="display: flex; justify-content: space-between; align-items: center; width: 100vw; padding: 0 50px; gap: 50px; box-sizing: border-box; max-width: 100vw;">
         
         <!-- Left Group -->
         <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
             <img src="One_Time_Payment.png" alt="Service Option 1" style="width: 30vw; height: auto; margin-bottom: 20px;">
-            <!-- Pricing Button under image -->
             <button onclick="location.href='https://pricing.assetflowautomations.com/'" id="Pricing" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
                 Pricing
             </button>
@@ -603,7 +601,6 @@ document.getElementById(['Button Name']).addEventListener('click', function() {
         <!-- Right Group -->
         <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
             <img src="Retainer.png" alt="Service Option 2" style="width: 30vw; height: auto; margin-bottom: 20px;">
-            <!-- Pricing Button under image -->
             <button onclick="location.href='https://pricing.assetflowautomations.com/'" id="Pricing" style="padding: 10px 20px; font-size: 16px; background-color: #ff7f00; color: white; border: none; cursor: pointer; margin-top: 20px;">
                 Pricing
             </button>
@@ -613,13 +610,26 @@ document.getElementById(['Button Name']).addEventListener('click', function() {
 
 <!-- Media query for responsive styling -->
 <style>
-    /* Adjust vertical line height on smaller screens */
+    /* Stack items vertically and adjust styles for mobile */
     @media (max-width: 768px) {
+        .services-container {
+            flex-direction: column;
+            align-items: center;
+            padding: 0 20px; /* Reduce padding on mobile */
+        }
+
         #vertical-line {
-            height: 300px; /* Reduced height for mobile */
+            display: none; /* Hide vertical line on mobile */
+        }
+
+        /* Adjust image size for mobile */
+        .services-container img {
+            width: 80vw; /* Increase image width on mobile */
+            margin-bottom: 20px;
         }
     }
 </style>
+
 
 
 
@@ -646,55 +656,45 @@ document.getElementById(['Button Name']).addEventListener('click', function() {
 
 
 <br><br>
-<div style="background-color: grey; max-width: 100vw;">
-<h0 style="color: black;">Blogs</h0>
-<div>
+<div style="background-color: grey; max-width: 100vw; padding: 20px;">
+    <h1 style="color: black; text-align: center;">Blogs</h1>
 
-<div style="width: 100%; background-color: grey; padding: 50px 0; display: flex; justify-content: center; max-width: 100vw;">
-    <!-- Horizontal line with controlled max width -->
-    <div style="width: 100%; max-width: 100vw; height: 2px; background-color: black;"></div>
+    <!-- Divider Line -->
+    <div style="width: 100%; max-width: 100vw; height: 2px; background-color: black; margin: 20px 0;"></div>
+
+    <!-- Container for blog posts with flex and responsive styling -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px 0;">
+
+<!-- Blog Post 1 -->
+<div class="group" style="width: 90%; max-width: 300px; text-align: center; background-color: #222; padding: 20px; border-radius: 8px;">
+    <img src="Blog_Image_1.png" alt="" style="width: 100%; height: auto; margin-bottom: 20px;">
+    <h5 style="color: white;">Maximizing Asset Management Efficiency Through AI Automation</h5>
+    <p style="color: white;">
+        In today's fast-paced business world, optimizing asset management efficiency is crucial for staying competitive and thriving in the market.
+    </p>
+    <button class="read-more-btn" onclick="openOverlay(1)" style="padding: 10px 20px; background-color: #ff7f00; color: white; border: none; border-radius: 12px; cursor: pointer;">Read More</button>
 </div>
 
+<!-- Blog Post 2 -->
+<div class="group" style="width: 90%; max-width: 300px; text-align: center; background-color: #222; padding: 20px; border-radius: 8px;">
+    <img src="Blog_Image_2.png" alt="Calendly Logo" style="width: 100%; height: auto; margin-bottom: 20px;">
+    <h5 style="color: white;">Boost Productivity in Asset Management with AI Automation Programming</h5>
+    <p style="color: white;">
+        In asset management, efficiency and productivity are key. Leveraging technology to streamline processes is crucial, and AI Automation Programming is revolutionizing operations.
+    </p>
+    <button class="read-more-btn" onclick="openOverlay(2)" style="padding: 10px 20px; background-color: #ff7f00; color: white; border: none; border-radius: 12px; cursor: pointer;">Read More</button>
+</div>
 
-<div style="display: flex; justify-content: center; width: 100%; background-color: grey">
+<!-- Blog Post 3 -->
+<div class="group" style="width: 90%; max-width: 300px; text-align: center; background-color: #222; padding: 20px; border-radius: 8px;">
+    <img src="Blog_Image_3.png" alt="" style="width: 100%; height: auto; margin-bottom: 20px;">
+    <h5 style="color: white;">AI-Powered Document Management</h5>
+    <p style="color: white;">
+        Document management requires time and resources. With AI automation solutions, streamlining document management processes has become easier.
+    </p>
+    <button class="read-more-btn" onclick="openOverlay(3)" style="padding: 10px 20px; background-color: #ff7f00; color: white; border: none; border-radius: 12px; cursor: pointer;">Read More</button>
+</div>
 
-
-
-
-<body style="max-width: 100vw;">
-    <!-- Three Groups -->
-    <div class="group">
-        <img src="Blog_Image_1.png" alt="" style="width: 15vw; height: auto; margin-bottom: 20px;">
-        <h5 style="color: white;">Maximizing Asset Management <br>Efficiency Through AI <br>Automation</h5>
-        <h7 style="color: white;">
-            <p class="intro-text">
-                In today's fast-paced business world, optimizing asset management <br>efficiency is crucial for staying competitive and thriving in the market.
-                <button class="read-more-btn" onclick="openOverlay(1)">Read More</button>
-            </p>
-        </h7>
-    </div>
-
-    <div class="group">
-        <img src="Blog_Image_2.png" alt="Calendly Logo" style="width: 15vw; height: auto; margin-bottom: 20px;">
-        <h5 style="color: white;">Boost Productivity in Asset Management with <br>AI Automation Programming</h5>
-        <h7 style="color: white;">
-            <p class="intro-text">
-                In the realm of business, efficiency and productivity are key factors that <br>can make or break a business. In the sector of asset management, <br>where time is of the essence and accuracy is paramount, leveraging technology <br>to streamline processes has become imperative. <br>This is where AI Automation Programming comes into play, revolutionizing the way asset management firms operate.
-                <button class="read-more-btn" onclick="openOverlay(2)">Read More</button>
-            </p>
-        </h7>
-    </div>
-
-    <div class="group">
-        <img src="Blog_Image_3.png" alt="" style="width: 15vw; height: auto; margin-bottom: 20px;">
-        <h5 style="color: white;">AI-Powered Document Management</h5>
-        <h7 style="color: white;">
-            <p class="intro-text">
-                Document management can be a daunting task for many businesses, <br>requiring extensive time and resources to handle paperwork, <br>data entry, and organization efficiently. However, <br>with the emergence of AI automation, solutions like those <br>offered by AssetFlow Automation, streamlining document <br>management processes have never been easier.
-                <button class="read-more-btn" onclick="openOverlay(3)">Read More</button>
-            </p>
-        </h7>
-    </div>
 
     <!-- Backdrop for all Overlays -->
     <div class="backdrop" onclick="closeOverlay()"></div>
@@ -886,11 +886,13 @@ In conclusion, for businesses looking to enhance productivity, reduce costs, and
     </style>
 </body>
 </div>
+</div>
+</body>
 
 
-
+<div>
 <!-- Footer with Subscribe Form -->
-<footer id="footer"; class= "footer"; style="background-color: #EFFE8A; padding: 20px; text-align: center; max-width: 100vw;">
+<footer id="footer"; class= "footer"; style="background-color: #EFFE8A; padding: 20px; text-align: center; width: 100%; max-width: 100vw;">
     <!-- Footer Heading -->
     <h1 style="color: black; margin-bottom: 10px;">AssetFlow Automations</h1>
 
@@ -964,9 +966,6 @@ In conclusion, for businesses looking to enhance productivity, reduce costs, and
         .catch(error => console.error('Error:', error));
     }
 </script>
-</div>
-</div>
-</div>
 
     <script>
         // Show main content after intro and hide intro with fade effect
@@ -975,5 +974,6 @@ In conclusion, for businesses looking to enhance productivity, reduce costs, and
             document.getElementById("main-content").style.display = "block";
         }, 3000); // 3 seconds
     </script>
-</body>
+</div>
+</div>
 </html>
