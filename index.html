@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="AssetFlow Automations specializes in tailored automation systems for asset and investment management firms, streamlining operations to save time on administrative tasks. From data entry solutions to comprehensive system management, AssetFlow Automations offers personalized packages to meet each firm's unique needs.">
     <title>AssetFlow Automations</title>
     <style>
         /* General Styling */
@@ -188,6 +187,40 @@
         body {
             padding-top: 100px; /* Adjust based on the height of your header */
         }
+
+        /* Mobile-specific styling */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px; /* Reduced padding for mobile */
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            h1 {
+                font-size: 24px;
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
     </style>
 </head>
 
@@ -225,7 +258,7 @@
                 <button onclick="scrollToSection('footer')">Contact</button>
             </nav>
         </div>
-    </header>
+</header>
 
 
 <div style="max-width: 100vw; background-color: grey;">
