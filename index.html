@@ -189,42 +189,43 @@
         }
 
         /* Mobile-specific styling */
-        @media (max-width: 768px) {
-            header {
-                padding: 10px 20px; /* Reduced padding for mobile */
-            }
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
 
-            .header-content {
-                flex-direction: column;
-                align-items: center;
-            }
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .logo {
-                width: 50px;
-                height: 50px;
-            }
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
 
-            h1 {
-                font-size: 24px;
-                text-align: center;
-                margin: 10px 0;
-            }
+    h1 {
+        font-size: 24px;
+        text-align: center;
+        margin: 10px 0;
+    }
 
-            nav {
-                gap: 10px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+    nav {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-            nav button {
-                font-size: 14px;
-                padding: 8px 16px;
-            }
+    nav button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 
-            /* Ensuring header doesn't overlap content */
-        body {
-            padding-top: 50px; /* Adjust based on the height of your header */
-        }
+    /* Add top padding or margin to body or main content to prevent overlap */
+    body {
+        padding-top: 120px; /* Adjust this value based on the actual header height */
+    }
+}
         }
     </style>
 </head>
