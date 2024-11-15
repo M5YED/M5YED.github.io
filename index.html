@@ -188,8 +188,9 @@
         max-width: 100%;
     }
 
-    /* Mobile Styling */
+/* Mobile Styling */
 @media (max-width: 768px) {
+    /* Header Adjustments */
     header {
         padding: 10px 20px;
         height: auto; /* Allow the header to expand as needed */
@@ -226,17 +227,18 @@
     body {
         padding-top: 50px; /* Prevents overlap of header and content */
     }
+
+    /* Background Wrapper Adjustments */
+    .background-wrapper {
+        padding: 0 10px; /* Increases padding for narrower screens */
+        background-attachment: scroll; /* Prevents fixed background issues on mobile */
+        background-image: url('Blue_Brain_Chip_Background.jpg'); /* Replace with your image path */
+        background-size: cover; /* Ensures the image covers the entire section */
+        background-position: center; /* Keeps the focal point centered */
+        background-repeat: no-repeat; /* Prevents tiling */
+    }
 }
 
-    }
-    
-    
-    /* Mobile-specific adjustments */
-    @media (max-width: 768px) {
-        .background-wrapper {
-            padding: 0 10px; /* Increases padding for narrower screens */
-            background-attachment: scroll; /* Prevents fixed background issues on mobile */
-        }
 
     /* Smaller Mobile Adjustments */
     @media (max-width: 600px) {
