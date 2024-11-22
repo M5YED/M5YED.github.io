@@ -1,25 +1,25 @@
 # AssetFlow Automations
 
-AssetFlow Automations creates tailored document-automation systems to help businesses, especially asset management and investment management companies, streamline their documentation and administrative processes. Our systems are designed to save time and increase efficiency, allowing businesses to focus on growth and profitability.
+AssetFlow Automations creates tailored document-automation systems to help businesses automate their documentation and administrative processes. Our systems are designed to save time and increase efficiency, allowing businesses to focus on growth and profitability.
 
 ## Overview
 
-AssetFlow Automations specializes in offering a wide range of documentation systems, each customized to meet the unique needs of our clients. We provide data handling automations, client profile builders, and various other automation solutions that eliminate time-consuming administrative tasks. 
+AssetFlow Automations specializes in offering a wide range of systems, each customized to meet the unique needs of our clients. We provide data handling automations, client profile builders, and various other automation solutions that eliminate time-consuming administrative tasks. 
 
 Our goal is simple: to give our clients the gift of time. We believe that time is the most valuable asset, and every second saved through automation can be reinvested in more valuable tasks.
 
 ## Services Offered
 
-- **Document Automation Systems**: Custom solutions for handling data, building client profiles, and streamlining documentation workflows.
+- **Document Automation Systems**: Custom solutions for handling data, sending emails, and streamlining business workflows.
 - **Consultation & Service Plans**: We offer full-service management plans, where we not only create but also manage and maintain the automation systems for our clients.
   
 ## Target Audience
 
 Our services are primarily aimed at:
-- **Asset Management Companies**
-- **Investment Management Firms**
+- **Businesses**
+- **Firms**
 
-We help these businesses save time, reduce administrative workload, and improve the accuracy and efficiency of their documentation systems.
+We help these businesses models save time, reduce administrative workload, and improve the accuracy and efficiency of their documentation systems. We do not limit ourselves to these businesses; all businesses are welcome to undertake a system automation service with us.
 
 ## Key Features
 
@@ -36,7 +36,7 @@ We help these businesses save time, reduce administrative workload, and improve 
 ## Why Choose AssetFlow Automations?
 
 - **Wide Range of Systems**: We offer multiple types of automation solutions, each with unique features based on your needs.
-- **Expertise & Support**: Our systems are backed by expert knowledge, and we offer continued support for at least 7 days after system delivery.
+- **Expertise & Support**: Our systems are backed by expert knowledge, and we offer continued support for at least 7 days after system delivery(for all service types).
 - **Proprietary Systems**: We develop and own the systems during the creation phase, but they become fully owned by our clients once the handover is complete.
 
 ## Installation & Setup
