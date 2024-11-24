@@ -246,19 +246,25 @@
 @media (max-width: 768px) {
     /* Header Adjustments */
     header {
-        padding: 10px 20px;
-        height: auto; /* Allow the header to expand as needed */
+        padding: 5px 15px; /* Reduce padding for a more compact header */
+        height: auto; /* Allow the header to adjust dynamically */
     }
 
     .header-content {
         flex-direction: column;
         align-items: center;
+        gap: 5px; /* Add spacing between elements for better alignment */
     }
 
     .logo {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 10px; /* Adds spacing for better alignment */
+        width: 30px; /* Decrease logo size */
+        height: 30px; /* Ensure logo scales proportionally */
+        margin-bottom: 5px; /* Reduce spacing under the logo */
+    }
+
+    .header-title {
+        font-size: 16px; /* Adjust the title size */
+        margin: 0; /* Remove unnecessary margins */
     }
 
     h1 {
