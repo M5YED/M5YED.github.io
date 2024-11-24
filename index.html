@@ -520,9 +520,7 @@
 
 <section id="Demo-Part-1" class="Demo-Part-1">
 <div id="Demo-Part-1" class="Demo-Part-1" style="background-color: #054708; color: #FFFFFF; padding: 20px; max-width: 100vw;">
-    <!-- Container for blog posts with flex and responsive styling -->
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px 0;">
-
+   
 <br>
 <h3 style="background-color: #054708; color: #FFFFFF; text-align: center; max-width: 100vw;">Micro-Systems</h3>
 <br><br>
@@ -692,6 +690,25 @@ document.getElementById('Email-Scheduling-System').addEventListener('click', () 
     .vertical-line {
             height: 200px;/* Adjust height to fit mobile */
         }
+
+        @media (max-width: 768px) {
+    #Demo-Part-1 > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #Demo-Part-1 .vertical-line,
+    #Demo-Part-1 div[style*="height: 2px"] {
+        display: none;
+    }
+
+    #Demo-Part-1 div > div {
+        margin: 20px 0;
+    }
+}
+
 </style>
 
 
@@ -852,17 +869,24 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
         height: 500px; /* Set default height for desktop */
         align-self: stretch; /* Ensure it stretches to content height */
     }
-    @media (max-width: 768px) {
-        #demos > div {
-            flex-direction: column;
-            align-items: center;
-        }
-        #demos div > div {
-            margin: 20px 0;
-    }
-        .vertical-line {
-            height: 200px; /* Adjust height to fit mobile
 
+    @media (max-width: 768px) {
+    #demo2 > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #demo2 .vertical-line,
+    #demo2 div[style*="height: 2px"] {
+        display: none;
+    }
+
+    #demo2 div > div {
+        margin: 20px 0;
+    }
+}
 </style>
 
 
@@ -946,7 +970,6 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
 
 
-</div>
 </div>
 </section>
 
