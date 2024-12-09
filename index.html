@@ -399,6 +399,47 @@
         opacity: 1; /* Fully visible */
         transform: translateY(0); /* Slide into place */
     }
+
+    .preview-container {
+        position: relative; /* Ensures the iframe is positioned relative to the container */
+        display: inline-block; /* Groups button and iframe together */
+    }
+
+    #preview-button {
+        padding: 10px 20px;
+        background-color: #A52A2A;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Arial', sans-serif;
+    }
+
+    #preview-button:hover {
+        background-color: #8B0000; /* Slightly darker red for hover effect */
+    }
+
+    #iframe-preview {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 110%; /* Below the button */
+        left: -150%;
+        width: 40vw;
+        height: 60vh;
+        border: 1px solid #CCC;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        background-color: #FFFFFF;
+    }
+
+
+/* Hover effect for non-mobile screens */
+@media (min-width: 769px) {
+    .preview-container:hover #iframe-preview {
+        display: block;
+    }
+}
+
     
 /* Mobile Styling */
 @media (max-width: 768px) {
@@ -463,6 +504,15 @@
 
     .project-eco h2 {
         font-size: 24px; /* Adjusts text size for smaller screens */
+    }
+    
+    #iframe-preview {
+        display: none !important; /* Always hidden on mobile */
+    }
+
+    #preview-button {
+        font-size: 14px;
+        padding: 8px 12px;
     }
 }
 
@@ -1138,6 +1188,62 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
 </section>
 
 
+<section id="Use-Cases" class="Use-Case">
+    <div style="font-family: GP-SB; background-color: #EFFE8A; padding: 20px; max-width: 100vw; text-align: center;">
+    <h3 style="color:#080027;">Want to see these agents in action? Check out our Use-Case page below!</h3>
+    <br>
+        <div class="preview-container" style="align-items: center;">
+            <button id="preview-button" class="hover-button" onclick="window.location.href='https://www.assetflowautomations.com/use-cases';">
+                Hover to Preview
+            </button>
+            <iframe id="iframe-preview" 
+                src="https://www.assetflowautomations.com/use-cases" 
+                title="Use Case Preview"
+                loading="lazy"
+                style="display: none;"> <!-- Default hidden -->
+            </iframe>
+        </div>
+    <br>
+    <br>
+</div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const iframe = document.getElementById('iframe-preview');
+    const button = document.getElementById('preview-button');
+
+    function togglePreviewForMobile() {
+        const isMobile = window.innerWidth <= 768;
+
+        if (isMobile) {
+            iframe.style.display = 'none'; // Ensure iframe is hidden
+            button.textContent = "Go to Use Cases"; // Update button text
+            button.removeEventListener('mouseover', showIframe);
+            button.removeEventListener('mouseleave', hideIframe); // Remove previous event listeners
+        } else {
+            iframe.style.display = 'none'; // Reset iframe visibility
+            button.textContent = "Hover to Preview"; // Update button text
+            button.addEventListener('mouseover', showIframe);
+            iframe.addEventListener('mouseleave', hideIframe); // Hide iframe if user leaves iframe
+        }
+    }
+
+    function showIframe() {
+        iframe.style.display = 'block'; // Show iframe on hover
+    }
+
+    function hideIframe() {
+        iframe.style.display = 'none'; // Hide iframe when hover is lost
+    }
+
+    // Initialize on load and adjust on resize
+    togglePreviewForMobile();
+    window.addEventListener('resize', togglePreviewForMobile);
+});
+</script>
+
+
+    
 
 <section>
 <br><br>
