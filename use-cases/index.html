@@ -274,6 +274,75 @@
         opacity: 1; /* Fully visible */
         transform: translateY(0); /* Slide into place */
     }
+        
+/* Mobile Styling */
+@media (max-width: 768px) {
+    /* Header Adjustments */
+    header {
+        padding: 2px 15px; /* Compact header */
+        height: auto; /* Allow dynamic height */
+        z-index: 10; /* Maintain layering above other elements */
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px; /* Add spacing for better alignment */
+    }
+
+    .logo {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 5px;
+    }
+
+    .header-title {
+        font-size: 16px;
+        margin: 0;
+    }
+
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+        margin: 10px 0; /* Adds space between header and content */
+    }
+
+    nav {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    body {
+        padding-top: 210px; /* Matches header height + spacing */
+    }
+}
+/* Smaller Mobile Adjustments */
+@media (max-width: 700px) {
+    section {
+        padding: 15px;
+        margin: 10px auto;
+        max-width: 100vw;
+    }
+
+    .text-container {
+        padding: 5px;
+    }
+
+    .image-container img {
+        width: 80vw;
+    }
+
+    header {
+        padding-bottom: 10px; /* Adds space below header */
+    }
+}
     </style>
 </head>
 <div id="main-content">
@@ -302,6 +371,10 @@
         <br>
         <h3 style="font-size: 20px;">Documentation</h3>
         <a href="https://documentation.assetflowautomations.com/">Documents</a>        
+        <br>
+        <h3 style="font-size: 20px;">Other</h3>
+        <a href="https://www.assetflowautomations.com/use-cases/">Use Cases</a>
+        <a href="https://uk.trustpilot.com/review/assetflowautomations.com?utm_medium=trustbox&utm_source=TrustBoxReviewCollector">Rate Us</a>        
         <br>
         <h3 style="font-size: 20px;">Contact</h3>
         <a href="mailto:support@assetflowautomations.com?subject=Support%20Request&body=Hello%2C%0D%0A%0D%0AI%20need%20assistance%20with...">Support(email)</a>
@@ -361,7 +434,8 @@
 <h2><u><center>Use-Cases</center></u></h2>
 <br>
 <section style="background-color: #A52A2A;">
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7271681458644160513?compact=1" height="399" width="710" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+<h3>Use Case: Customer Service Agent</h3>
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7271681458644160513?compact=1" style="height:40vh; width: 60vw;" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
 </section>
 </body>
 <footer id="footer"; class= "footer"; style="background-color: #EFFE8A; padding: 20px; text-align: center; width: 100%; max-width: 100vw;">
