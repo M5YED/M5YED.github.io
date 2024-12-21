@@ -351,13 +351,28 @@
         border-radius: 5px;
         padding: 10px 20px;
         cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        animation: infinite-glow 1.5s infinite; /* Faster and more dynamic glow */
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); /* Stronger initial glow */
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     }
 
     .gold-menu-button:hover {
         background-color: #FFDF00; /* Lighter gold on hover */
-        box-shadow: 0 0 15px #FFD700; /* Gold glow */
-        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 0.8); /* Strong multi-layered glow */
+        transform: scale(1.1); /* Slightly larger scale on hover */
+        animation: none; /* Stop infinite glow on hover */
+    }
+
+    /* Infinite glowing animation with stronger intensity */
+    @keyframes infinite-glow {
+        0%, 100% {
+            background-color: #FFD700; /* Initial gold */
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); /* Moderate red glow */
+        }
+        50% {
+            background-color: #FFC300; /* Slightly darker gold */
+            box-shadow: 0 0 40px rgba(255, 0, 0, 1), 0 0 50px rgba(255, 0, 0, 0.8); /* Intense multi-layered glow */
+        }
     }
 
     /* Hidden overlay by default */
@@ -392,9 +407,7 @@
 
     .menu-overlay a:hover {
         color: #FFDF00;
-        cursor: pointer;
     }
-
 
     /* Active menu overlay (visible with animation) */
     .menu-overlay.active {
@@ -402,7 +415,7 @@
         opacity: 1; /* Fully visible */
         transform: translateY(0); /* Slide into place */
     }
-
+        
     .preview-container {
         position: relative; /* Ensures the iframe is positioned relative to the container */
         display: inline-block; /* Groups button and iframe together */
