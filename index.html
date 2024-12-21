@@ -392,6 +392,7 @@
 
     .menu-overlay a:hover {
         color: #FFDF00;
+        cursor: pointer;
     }
 
 
@@ -602,6 +603,7 @@
         <a href="mailto:support@assetflowautomations.com?subject=Support%20Request&body=Hello%2C%0D%0A%0D%0AI%20need%20assistance%20with...">Support(email)</a>
         <a href="mailto:info@assetflowautomations.com?subject=Information%20Request&body=Dear%20Team%2C%0D%0A%0D%0AI%20would%20like%20to%20know%20more%20about...">Info(email)</a>
 <a href="https://wa.me/447887333872?text=Hello%2C%20I'm%20interested%20in%20your%20services" target="_blank">WhatsApp</a>
+        <a id="quicksupport">Quicksupport</a>
         <br>       
     </div>
 </nav>
@@ -665,7 +667,47 @@
     });
 </script>
 
-    
+ <script>
+document.getElementById('quicksupport').addEventListener('click', () => {
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+            // Initialize Voiceflow chat
+            window.voiceflow.chat.load({
+                verify: { projectID: '672f9a87dd74c835a2761c60' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                showInitialMessage: false,
+                showLauncher: false // Keep the launcher hidden
+            }).then(() => {
+                console.log('Voiceflow chat loaded successfully.');
+
+                // Open the chat programmatically when the button is clicked
+                window.voiceflow.chat.open();
+                console.log('Chat opened.');
+
+                // Ensure the launcher is removed in case it's injected
+                const removeLauncher = () => {
+                    const launcher = document.querySelector('.vf-chat-launcher');
+                    if (launcher) {
+                        launcher.remove();
+                        console.log('Launcher removed.');
+                    }
+                };
+
+                // Run the removal function immediately and periodically
+                removeLauncher();
+                setInterval(removeLauncher, 1000);
+            }).catch((error) => {
+                console.error('Error loading Voiceflow chat:', error);
+            });
+        };
+        v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs'; // Load Voiceflow widget
+        v.type = 'module'; // Ensure the script loads as a module
+        s.parentNode.insertBefore(v, s); // Insert the script into the DOM
+    })(document, 'script');
+});
+</script>   
 
 
 
@@ -1165,8 +1207,6 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
-
-
 </div>
 </section>
 
