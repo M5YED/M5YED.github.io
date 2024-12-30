@@ -723,7 +723,81 @@ document.getElementById('quicksupport').addEventListener('click', () => {
 });
 </script>   
 
+<script>
+// List of fruit names
+const fruits = [
+  "Apple", "Apricot", "Avocado", "Banana", "Blackberry", "Blueberry", "Boysenberry", "Cantaloupe", "Carambola", "Cherry", "Clementine", "Coconut", "Cranberry", "Currant", "Date", "Dragonfruit", "Durian", "Elderberry", "Fig", "Gooseberry", "Grape", "Grapefruit", "Guava", "Honeydew", "IndianFig", "Jackfruit", "Jujube", "Kiwi", "Kumquat", "Lemon", "Lime", "Longan", "Lychee", "Mango", "Mangosteen", "Mulberry", "Nectarine", "Olive", "Orange", "Papaya", "PassionFruit", "Peach", "Pear", "Persimmon", "Pineapple", "Plantain", "Plum", "Pomegranate", "Pomelo", "Quince", "Raspberry", "Rambutan", "Redcurrant", "Salak", "Sapodilla", "Soursop", "StarApple", "Starfruit", "Strawberry", "Tamarind", "Tangerine", "UgliFruit", "Watermelon", "WhiteCurrant", "Wolfberry", "Yumberry", "Zucchini", "Acai", "Aronia", "Bacaba", "Bignay", "BitterMelon", "Breadfruit", "Cempedak", "Cupuacu", "Feijoa", "HalaFruit", "Illama", "Jaboticaba", "Langsat", "MameySapote", "Mamoncillo", "Marang", "MiracleFruit", "Nance", "Pequi", "Pitanga", "Pitaya", "Santol", "Sapote", "SurinamCherry", "Tepache", "Voavanga", "Yangmei", "Abiu", "Acerola", "AfricanBreadfruit", "AfricanMango", "Akee", "Ambarella", "Atemoya", "BalsamApple", "BarbadosCherry", "Bayberry", "BetelNut", "Bilberry", "BlackSapote", "Breadnut", "BuddhasHand", "Caimito", "Calamansi", "CamuCamu", "Canistel", "CapeGooseberry", "CashewApple", "Chayote", "Cherimoya", "Chokeberry", "Chontaduro", "Citron", "ClusterFig", "Cocona", "Cowa", "CustardApple", "Damson", "DesertDate", "Duku", "ElephantApple", "FingerLime", "GacFruit", "GaliaMelon", "GoldenApple", "Goumi", "GovernorPlum", "Grumichama", "HogPlum", "IceCreamBean", "IndianGooseberry", "IndianJujube", "IndianPrune", "IndianWalnut", "JamaicanPlum", "Jocote", "Kabosu", "KaffirLime", "Karkalla", "KeiApple", "Korlan", "Kutjera", "Lakoocha", "Lapsi", "Limeberry", "MacadamiaNut", "Madrono", "MalayApple", "MammeeApple", "Mangaba", "ManilaTamarind", "Marula", "Medlar", "MonkeyOrange", "MonsteraDeliciosa", "Mundu", "NatalPlum", "Noni", "OkariNut", "Pandanus", "PeachPalm", "PigeonPea", "Pitomba", "PondApple", "Pulasan", "Quandong", "RataFruit", "Rollinia", "Roselle", "Safou", "Santol", "SeaGrape", "Serviceberry", "SnowBerry", "Soncoya", "SpanishLime", "StrawberryGuava", "SugarApple", "SweetLemon", "TahitianChestnut", "TalipotPalm", "Tamarillo", "TaroFruit", "VelvetApple", "Wampee", "WaxJambu", "WhiteSapote", "WildMangosteen", "YellowDragonfruit", "YunnanHackberry", "ZabergauReinette", "ZigZagVine"];
 
+const AIRTABLE_API_KEY = "pat8lyKHm2FpbPRje.eedcaae3c12ce2fba31041e0b9721d273b6db561889975a835e9c0f6684b87cf";
+const AIRTABLE_BASE_ID = "appKHweelVI0KcjjE";
+const AIRTABLE_TABLE_NAME = "Table%201";
+
+// Function to generate a random fruit-based user ID
+function generateUserId() {
+  const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+  const uniqueNumber = Date.now().toString().slice(-6); // Adds a unique number
+  return `${randomFruit}-${uniqueNumber}`;
+}
+
+// Function to send data to Airtable and return recordId
+async function sendToAirtable(userId) {
+  const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
+  
+  const data = {
+    fields: {
+      User: userId,
+    }
+  };
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${AIRTABLE_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      const recordId = result.id;
+      console.log("User ID sent to Airtable:", userId);
+      console.log("Saved record ID:", recordId);
+
+      // Store recordId in localStorage
+      localStorage.setItem("recordId", recordId);
+      return recordId; // Return the recordId if needed
+    } else {
+      console.error("Error sending data to Airtable:", response.status, await response.text());
+      return null;
+    }
+  } catch (error) {
+    console.error("Failed to send user ID to Airtable:", error);
+    return null;
+  }
+}
+
+
+    
+// Main logic to execute on page load
+window.onload = async () => {
+  const userId = generateUserId();
+  console.log("Generated User ID:", userId);
+
+  try {
+    const recordId = await sendToAirtable(userId);
+    if (recordId) {
+      console.log("Record successfully created with ID:", recordId);
+    } else {
+      console.error("Failed to create record");
+    }
+  } catch (error) {
+    console.error("Failed to send user ID to Airtable:", error);
+  }
+}; // <-- Corrected closing
+</script>
+<script src="script.js" defer></script>
 
 
 
