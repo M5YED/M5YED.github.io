@@ -275,6 +275,54 @@
         transform: translateY(0); /* Slide into place */
     }
         
+    /* Overlay Styles */
+    .overlay {
+        position: fixed;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 600px;
+        max-height: 80vh;
+        overflow-y: auto; /* Enable vertical scrolling if content is too long */
+        background: #FFFFFF;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        display: none;
+        z-index: 10;
+    }
+
+    .overlay.visible {
+        display: block;
+    }
+
+    .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+        display: none;
+    }
+
+    .backdrop.visible {
+        display: block;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        color: #333;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+        
 /* Mobile Styling */
 @media (max-width: 768px) {
     /* Header Adjustments */
@@ -412,28 +460,12 @@
         if (section) {
             section.scrollIntoView({ behavior: 'smooth' });
         }
-    }
-
-    // Animation and transition script
-    document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(() => {
-            const intro = document.getElementById("intro");
-            if (intro) {
-                intro.style.opacity = 0; // Smooth fade-out
-                setTimeout(() => {
-                    intro.style.display = "none"; // Remove after fade-out
-                    const mainContent = document.getElementById("main-content");
-                    if (mainContent) {
-                        mainContent.style.display = "block"; // Show main content
-                    }
-                }, 500); // Wait for fade-out to complete (0.5s)
-            }
-        }, 2000); // 2-second intro display
     });
 </script>
 <body>
 <h2><u><center>Use-Cases</center></u></h2>
 <br>
+<center><button class="UserInterfaceNote" onclick="openOverlay()" style="padding: 10px 20px; background-color: #ff7f00; color: #FFFFFF; border: none; border-radius: 12px; cursor: pointer;">Open User Interface Notes</button></center>
 <section style="padding: 20px; background-color: #A52A2A;">
 
   <!-- First row: Customer Service Agent -->
@@ -447,6 +479,12 @@
       title="Embedded post">
     </iframe>
     <div style="clear: both;"></div>
+    <h3 style="text-align: left;">
+        - Automate answering FAQ's<br>
+        - Engage with potential customers<br>
+        - Share important information subtly<br>
+    </h3>
+    <br>
   </div>
 
   <!-- Second row: Sales and Lead Generation Agent -->
@@ -460,6 +498,11 @@
       title="Embedded post">
     </iframe>
     <div style="clear: both;"></div>
+    <h3 style="text-align: right;">
+        - Market new products<br>
+        - Turn leads into clients<br>
+        - Assist confused customers<br>
+    </h3>
     <br>
   </div>
 
@@ -474,9 +517,53 @@
       title="Embedded post">
     </iframe>
     <div style="clear: both;"></div>
+    <h3 style="text-align: left;">
+        - Pass on messages to staff<br>
+        - Be alerted of responses from staff<br>
+        - Let the system collect data from other platforms<br>
+    </h3>
+    <br>
+  </div>
+
+  <!-- fourth row: Employee Onboarding Agent -->
+  <div>
+    <h3 style="text-align: right; margin-bottom: 10px;">Use Case: Employee Onboarding Agent</h3>
+    <iframe 
+      src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7279669939647463425?compact=1" 
+      style="float: right; height: 50vh; width: 60vw; margin: 0;" 
+      frameborder="0" 
+      allowfullscreen="" 
+      title="Embedded post">
+    </iframe>
+    <div style="clear: both;"></div>
+    <h3 style="text-align: right;">
+        - Reduce workloads on staff<br>
+        - Provide employee training based on name<br>
+        - Create dynamic chats that adjust to situations<br>
+    </h3>
     <br>
   </div>
 </section>
+<div class="backdrop" onclick="closeOverlay()"></div>
+<div id="overlay" class="overlay hidden">
+    <button class="close-btn" onclick="closeOverlay()">×</button>
+    <h4 style="color: #A52A2A;"><center><b>User Interface Notes</b></center><br>
+    - Double click on video for full-screen view<br>
+    - Double click or press "esc" on video  to exit full-screen view<br>
+    - Click on the LinkedIn logo to view full post on LinkedIn
+    </h4>
+</div>
+<script>
+    function openOverlay() {
+        document.getElementById("overlay").classList.add("visible");
+        document.querySelector(".backdrop").classList.add("visible");
+    }
+
+    function closeOverlay() {
+        document.getElementById("overlay").classList.remove("visible");
+        document.querySelector(".backdrop").classList.remove("visible");
+    }
+</script>
 </body>
 <!-- Footer with Subscribe Form -->
 <footer id="footer"; class= "footer"; style="background-color: #EFFE8A; padding: 20px; text-align: center; width: 100%; max-width: 100vw;">
@@ -559,14 +646,6 @@
         .catch(error => console.error('Error:', error));
     }
 </script>
-
-    <script>
-        // Show main content after intro and hide intro with fade effect
-        setTimeout(() => {
-            document.getElementById("intro").classList.add("fade-out");
-            document.getElementById("main-content").style.display = "block";
-        }, 2000); // 2 seconds
-    </script>
 </section>
 </footer>
 </html>
