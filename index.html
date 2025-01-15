@@ -1079,6 +1079,7 @@ console.log = function(message, ...args) {
   }
 };
 
+// Cookie Notice
 document.addEventListener("DOMContentLoaded", () => {
   const cookieOverlay = document.getElementById("cookie-overlay");
   const whiteOverlay = document.getElementById("white-overlay");
@@ -1091,11 +1092,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initially, the manage preferences overlay is hidden
   managePreferencesOverlay.style.display = "none";
 
-  // Display the cookie overlay after 5 seconds
-  setTimeout(() => {
-    cookieOverlay.classList.remove("hidden");
-    cookieOverlay.classList.add("visible");
-  }, 5000);
+  // Check if the overlay has been shown in this session
+  if (!sessionStorage.getItem("cookieOverlayShown")) {
+    // Display the cookie overlay after 5 seconds
+    setTimeout(() => {
+      cookieOverlay.classList.remove("hidden");
+      cookieOverlay.classList.add("visible");
+      sessionStorage.setItem("cookieOverlayShown", "true"); // Mark as shown
+    }, 5000);
+  }
 
   // Handle the "Accept" button click
   acceptButton.addEventListener("click", () => {
