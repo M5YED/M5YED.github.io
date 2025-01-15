@@ -449,6 +449,233 @@
         background-color: #FFFFFF;
     }
 
+    /* General overlay styling */
+    #cookie-overlay {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 20px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    #cookie-overlay.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        z-index: 1;
+    }
+
+    /* Cookie content box */
+    .cookie-content {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        color: #000;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+
+    .cookie-content h2 {
+        margin-bottom: 10px;
+        font-size: 1.5em;
+        z-index: 1;
+    }
+    
+    .cookie-text {
+        max-height: 100px;
+        overflow-y: auto;
+        margin: 10px 0;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        text-align: left;
+        font-size: 0.9em;
+        z-index: 1;
+    }
+
+    .cookie-text a {
+        color: #054708;
+        text-decoration: underline;
+    }
+
+    .cookie-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+        z-index: 1;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .btn.manage {
+        background: #4caf50;
+        z-index: 1;
+    }
+
+    .btn.accept {
+        background: #007bff;
+        z-index: 1;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+
+    #white-overlay {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        color: #000;
+        padding: 30px;
+        border-radius: 8px;
+        font-size: 1.2em;
+        font-weight: bold;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1100;
+        display: none;
+        text-align: center;
+        width: 80%;
+        max-width: 400px;
+    }
+
+    #white-overlay p {
+        margin: 0;
+        font-size: 1em;
+        }
+
+    #manage-preferences-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 1);
+        color: #000;
+        z-index: 1100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .hidden {
+        display: none;
+        }
+
+    .manage-content {
+        width: 100%;
+        max-width: 400px;
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .manage-content h2 {
+        margin-bottom: 20px;
+        font-size: 1.5em;
+    }
+
+    .preferences-section {
+        margin-bottom: 20px;
+    }
+
+    .toggle-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .toggle-wrapper span {
+        font-size: 1em;
+    }
+
+    .toggle-input {
+        display: none;
+    }
+
+    .toggle-slider {
+        position: relative;
+        width: 50px;
+        height: 25px;
+        background: #ccc;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .toggle-slider:before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 21px;
+        height: 21px;
+        background: #fff;
+        border-radius: 50%;
+        transition: transform 0.3s;
+    }
+
+    .toggle-input:checked + .toggle-slider {
+        background: #054708; 
+    }
+
+    .toggle-input:checked + .toggle-slider:before {
+        transform: translateX(25px);
+    }
+
+    .manage-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: opacity 0.3s;
+    }
+
+    .btn.back {
+        background: #6c757d; /* Grey for back */
+    }
+
+    .btn.save {
+        background: #4caf50; /* Green for Save & Exit */
+    }
+
+    .vertical-line {
+        height: 500px;
+        align-self: stretch;
+    }
+
 
 /* Hover effect for non-mobile screens */
 @media (min-width: 769px) {
@@ -460,17 +687,16 @@
     
 /* Mobile Styling */
 @media (max-width: 768px) {
-    /* Header Adjustments */
     header {
-        padding: 2px 15px; /* Compact header */
-        height: auto; /* Allow dynamic height */
-        z-index: 10; /* Maintain layering above other elements */
+        padding: 2px 15px;
+        height: auto;
+        z-index: 10;
     }
 
     .header-content {
         flex-direction: column;
         align-items: center;
-        gap: 5px; /* Add spacing for better alignment */
+        gap: 5px;
     }
 
     .logo {
@@ -516,24 +742,56 @@
         background-repeat: no-repeat;
     }
     .project-eco img {
-        width: 24px; /* Shrinks image size on smaller screens */
+        width: 24px;
     }
 
     .project-eco h2 {
-        font-size: 24px; /* Adjusts text size for smaller screens */
+        font-size: 24px;
     }
     
     #iframe-preview {
-        display: none !important; /* Always hidden on mobile */
+        display: none !important;
     }
 
     #preview-button {
         font-size: 14px;
         padding: 8px 12px;
     }
+
+    .menu-overlay {
+        top: 60px;
+        left: -75px;
+    }
+
+    #demos > div {
+        flex-direction: column;
+        align-items: center;
+    }
+    #demos div > div {
+        margin: 20px 0;
+    }
+    .vertical-line {
+        height: 200px;
+    }
+
+    #Demo-Part-1 > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #Demo-Part-1 .vertical-line,
+    #Demo-Part-1 div[style*="height: 2px"] {
+        display: none;
+    }
+
+    #Demo-Part-1 div > div {
+        margin: 20px 0;
+    }
 }
 
-/* Smaller Mobile Adjustments */
+        
 @media (max-width: 700px) {
     section {
         padding: 15px;
@@ -556,11 +814,11 @@
 
 @media (max-width: 480px) {
     .project-eco img {
-        width: 18px; /* Further reduces image size */
+        width: 18px;
     }
 
     .project-eco h2 {
-        font-size: 18px; /* Matches text size with smaller images */
+        font-size: 18px;
     }
 }
 </style>
@@ -625,16 +883,6 @@
         </div>
     </header>
 </div>
-
-<!--CSS-->
-<style>
-    @media (max-width: 768px) {
-        .menu-overlay {
-            top: 60px; /* Positioned below the button */
-            left: -75px;
-        }
-    }
-</style>
 <!-- JavaScript -->
 <script>
     function toggleMenu() {
@@ -653,9 +901,7 @@
             }, 10); // Delay for smooth transition
         }
     }
-</script>
-    
-<script>
+
     // Smooth scrolling script
     function scrollToSection(sectionId) {
         const section = document.getElementById(sectionId);
@@ -680,10 +926,8 @@
             }
         }, 2000); // 2-second intro display
     });
-</script>
 
- <script>
-document.getElementById('quicksupport').addEventListener('click', () => {
+    document.getElementById('quicksupport').addEventListener('click', () => {
     (function(d, t) {
         var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
         v.onload = function() {
@@ -722,9 +966,7 @@ document.getElementById('quicksupport').addEventListener('click', () => {
         s.parentNode.insertBefore(v, s); // Insert the script into the DOM
     })(document, 'script');
 });
-</script>   
-
-<script>
+    
 // List of fruit names
 const fruits = [
   "Apple", "Apricot", "Avocado", "Banana", "Blackberry", "Blueberry", "Boysenberry", "Cantaloupe", "Carambola", "Cherry", "Clementine", "Coconut", "Cranberry", "Currant", "Date", "Dragonfruit", "Durian", "Elderberry", "Fig", "Gooseberry", "Grape", "Grapefruit", "Guava", "Honeydew", "IndianFig", "Jackfruit", "Jujube", "Kiwi", "Kumquat", "Lemon", "Lime", "Longan", "Lychee", "Mango", "Mangosteen", "Mulberry", "Nectarine", "Olive", "Orange", "Papaya", "PassionFruit", "Peach", "Pear", "Persimmon", "Pineapple", "Plantain", "Plum", "Pomegranate", "Pomelo", "Quince", "Raspberry", "Rambutan", "Redcurrant", "Salak", "Sapodilla", "Soursop", "StarApple", "Starfruit", "Strawberry", "Tamarind", "Tangerine", "UgliFruit", "Watermelon", "WhiteCurrant", "Wolfberry", "Yumberry", "Zucchini", "Acai", "Aronia", "Bacaba", "Bignay", "BitterMelon", "Breadfruit", "Cempedak", "Cupuacu", "Feijoa", "HalaFruit", "Illama", "Jaboticaba", "Langsat", "MameySapote", "Mamoncillo", "Marang", "MiracleFruit", "Nance", "Pequi", "Pitanga", "Pitaya", "Santol", "Sapote", "SurinamCherry", "Tepache", "Voavanga", "Yangmei", "Abiu", "Acerola", "AfricanBreadfruit", "AfricanMango", "Akee", "Ambarella", "Atemoya", "BalsamApple", "BarbadosCherry", "Bayberry", "BetelNut", "Bilberry", "BlackSapote", "Breadnut", "BuddhasHand", "Caimito", "Calamansi", "CamuCamu", "Canistel", "CapeGooseberry", "CashewApple", "Chayote", "Cherimoya", "Chokeberry", "Chontaduro", "Citron", "ClusterFig", "Cocona", "Cowa", "CustardApple", "Damson", "DesertDate", "Duku", "ElephantApple", "FingerLime", "GacFruit", "GaliaMelon", "GoldenApple", "Goumi", "GovernorPlum", "Grumichama", "HogPlum", "IceCreamBean", "IndianGooseberry", "IndianJujube", "IndianPrune", "IndianWalnut", "JamaicanPlum", "Jocote", "Kabosu", "KaffirLime", "Karkalla", "KeiApple", "Korlan", "Kutjera", "Lakoocha", "Lapsi", "Limeberry", "MacadamiaNut", "Madrono", "MalayApple", "MammeeApple", "Mangaba", "ManilaTamarind", "Marula", "Medlar", "MonkeyOrange", "MonsteraDeliciosa", "Mundu", "NatalPlum", "Noni", "OkariNut", "Pandanus", "PeachPalm", "PigeonPea", "Pitomba", "PondApple", "Pulasan", "Quandong", "RataFruit", "Rollinia", "Roselle", "Safou", "Santol", "SeaGrape", "Serviceberry", "SnowBerry", "Soncoya", "SpanishLime", "StrawberryGuava", "SugarApple", "SweetLemon", "TahitianChestnut", "TalipotPalm", "Tamarillo", "TaroFruit", "VelvetApple", "Wampee", "WaxJambu", "WhiteSapote", "WildMangosteen", "YellowDragonfruit", "YunnanHackberry", "ZabergauReinette", "ZigZagVine"
@@ -836,6 +1078,81 @@ console.log = function(message, ...args) {
     }
   }
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cookieOverlay = document.getElementById("cookie-overlay");
+  const whiteOverlay = document.getElementById("white-overlay");
+  const managePreferencesOverlay = document.getElementById("manage-preferences-overlay");
+  const acceptButton = document.querySelector(".btn.accept");
+  const manageButton = document.querySelector(".btn.manage");
+  const backButton = document.querySelector(".btn.back");
+  const saveButton = document.querySelector(".btn.save");
+
+  // Initially, the manage preferences overlay is hidden
+  managePreferencesOverlay.style.display = "none";
+
+  // Display the cookie overlay after 5 seconds
+  setTimeout(() => {
+    cookieOverlay.classList.remove("hidden");
+    cookieOverlay.classList.add("visible");
+  }, 5000);
+
+  // Handle the "Accept" button click
+  acceptButton.addEventListener("click", () => {
+    // Hide the cookie overlay
+    cookieOverlay.classList.remove("visible");
+    cookieOverlay.style.display = "none";
+
+    // Show the white overlay
+    whiteOverlay.style.display = "block";
+
+    // Hide the white overlay after 2 seconds
+    setTimeout(() => {
+      whiteOverlay.style.display = "none";
+    }, 2000);
+  });
+
+  // Show the "Manage Preferences" overlay on button click
+  manageButton.addEventListener("click", () => {
+    managePreferencesOverlay.style.display = "flex"; // Show the preferences overlay
+    managePreferencesOverlay.classList.remove("hidden");
+  });
+
+  // Hide the "Manage Preferences" overlay on "Back" button click
+  backButton.addEventListener("click", () => {
+    managePreferencesOverlay.style.display = "none"; // Hide the preferences overlay
+    managePreferencesOverlay.classList.add("hidden");
+  });
+
+  // Save preferences and hide the "Manage Preferences" overlay on "Save & Exit" button click
+  saveButton.addEventListener("click", () => {
+    // Hide the cookie overlay
+    cookieOverlay.classList.remove("visible");
+    cookieOverlay.style.display = "none";
+    // Show the white overlay
+    whiteOverlay.style.display = "block";
+    managePreferencesOverlay.style.display = "none"; // Hide the preferences overlay
+    managePreferencesOverlay.classList.add("hidden");
+    // Hide the white overlay after 2 seconds
+    setTimeout(() => {
+      whiteOverlay.style.display = "none";
+    }, 2000);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const analyticsToggle = document.getElementById("analytics-toggle");
+  const adsToggle = document.getElementById("ads-toggle");
+
+  // Listen for changes on both toggles
+  analyticsToggle.addEventListener("change", handleToggleChange);
+  adsToggle.addEventListener("change", handleToggleChange);
+
+  function handleToggleChange() {
+    // Log the message when any toggle is changed
+    console.log("The user opted out of optional cookies");
+  }
+});
 </script>
 <script src="script.js" defer></script>
 
@@ -920,300 +1237,8 @@ console.log = function(message, ...args) {
     </div>
   </div>
 </div>
-<style>
-/* General overlay styling */
-#cookie-overlay {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 20px;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
 
-#cookie-overlay.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
 
-/* Cookie content box */
-.cookie-content {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  color: #000;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.cookie-content h2 {
-  margin-bottom: 10px;
-  font-size: 1.5em;
-}
-    
-.cookie-text {
-  max-height: 100px;
-  overflow-y: auto;
-  margin: 10px 0;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
-  text-align: left;
-  font-size: 0.9em;
-}
-
-.cookie-text a {
-  color: #054708;
-  text-decoration: underline;
-}
-
-.cookie-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.btn {
-  padding: 10px 20px;
-  font-size: 1em;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn.manage {
-  background: #4caf50;
-}
-
-.btn.accept {
-  background: #007bff;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-/* Styling for white overlay */
-#white-overlay {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  color: #000;
-  padding: 30px;
-  border-radius: 8px;
-  font-size: 1.2em;
-  font-weight: bold;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  z-index: 1100; /* Higher than the dark background */
-  display: none; /* Hidden by default */
-  text-align: center;
-  width: 80%;
-  max-width: 400px;
-}
-
-#white-overlay p {
-  margin: 0;
-  font-size: 1em;
-}
-/* Manage Preferences Overlay */
-#manage-preferences-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 1); /* White background */
-  color: #000; /* Black text */
-  z-index: 1100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.hidden {
-  display: none;
-}
-
-.manage-content {
-  width: 100%;
-  max-width: 400px;
-  background: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-.manage-content h2 {
-  margin-bottom: 20px;
-  font-size: 1.5em;
-}
-
-.preferences-section {
-  margin-bottom: 20px;
-}
-
-.toggle-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.toggle-wrapper span {
-  font-size: 1em;
-}
-
-.toggle-input {
-  display: none;
-}
-
-.toggle-slider {
-  position: relative;
-  width: 50px;
-  height: 25px;
-  background: #ccc;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.toggle-slider:before {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 21px;
-  height: 21px;
-  background: #fff;
-  border-radius: 50%;
-  transition: transform 0.3s;
-}
-
-.toggle-input:checked + .toggle-slider {
-  background: #054708; 
-}
-
-.toggle-input:checked + .toggle-slider:before {
-  transform: translateX(25px);
-}
-
-/* Buttons */
-.manage-buttons {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.btn {
-  padding: 10px 20px;
-  font-size: 1em;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: opacity 0.3s;
-}
-
-.btn.back {
-  background: #6c757d; /* Grey for back */
-}
-
-.btn.save {
-  background: #4caf50; /* Green for Save & Exit */
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const cookieOverlay = document.getElementById("cookie-overlay");
-  const whiteOverlay = document.getElementById("white-overlay");
-  const managePreferencesOverlay = document.getElementById("manage-preferences-overlay");
-  const acceptButton = document.querySelector(".btn.accept");
-  const manageButton = document.querySelector(".btn.manage");
-  const backButton = document.querySelector(".btn.back");
-  const saveButton = document.querySelector(".btn.save");
-
-  // Initially, the manage preferences overlay is hidden
-  managePreferencesOverlay.style.display = "none";
-
-  // Display the cookie overlay after 5 seconds
-  setTimeout(() => {
-    cookieOverlay.classList.remove("hidden");
-    cookieOverlay.classList.add("visible");
-  }, 5000);
-
-  // Handle the "Accept" button click
-  acceptButton.addEventListener("click", () => {
-    // Hide the cookie overlay
-    cookieOverlay.classList.remove("visible");
-    cookieOverlay.style.display = "none";
-
-    // Show the white overlay
-    whiteOverlay.style.display = "block";
-
-    // Hide the white overlay after 2 seconds
-    setTimeout(() => {
-      whiteOverlay.style.display = "none";
-    }, 2000);
-  });
-
-  // Show the "Manage Preferences" overlay on button click
-  manageButton.addEventListener("click", () => {
-    managePreferencesOverlay.style.display = "flex"; // Show the preferences overlay
-    managePreferencesOverlay.classList.remove("hidden");
-  });
-
-  // Hide the "Manage Preferences" overlay on "Back" button click
-  backButton.addEventListener("click", () => {
-    managePreferencesOverlay.style.display = "none"; // Hide the preferences overlay
-    managePreferencesOverlay.classList.add("hidden");
-  });
-
-  // Save preferences and hide the "Manage Preferences" overlay on "Save & Exit" button click
-  saveButton.addEventListener("click", () => {
-    // Hide the cookie overlay
-    cookieOverlay.classList.remove("visible");
-    cookieOverlay.style.display = "none";
-    // Show the white overlay
-    whiteOverlay.style.display = "block";
-    managePreferencesOverlay.style.display = "none"; // Hide the preferences overlay
-    managePreferencesOverlay.classList.add("hidden");
-    // Hide the white overlay after 2 seconds
-    setTimeout(() => {
-      whiteOverlay.style.display = "none";
-    }, 2000);
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const analyticsToggle = document.getElementById("analytics-toggle");
-  const adsToggle = document.getElementById("ads-toggle");
-
-  // Listen for changes on both toggles
-  analyticsToggle.addEventListener("change", handleToggleChange);
-  adsToggle.addEventListener("change", handleToggleChange);
-
-  function handleToggleChange() {
-    // Log the message when any toggle is changed
-    console.log("The user opted out of optional cookies");
-  }
-});
-</script>
 
 
 
@@ -1393,45 +1418,6 @@ document.getElementById('Email-Sending-System').addEventListener('click', () => 
 <div style="display: flex; justify-content: center; width: 100%; background-color: #054708; max-width: 100vw;">
     <div style="width: 100vw; height: 2px; background-color: #FFFFFF; margin-top: 20px; margin-bottom: 20px;"></div>
 </div>
-
-<!-- Media Query for Mobile Screens -->
-<style>
-    /* Default Styling for Desktop */
-    .vertical-line {
-        height: 500px; /* Set default height for desktop */
-        align-self: stretch; /* Ensure it stretches to content height */
-    }
-    @media (max-width: 768px) {
-        #demos > div {
-            flex-direction: column;
-            align-items: center;
-        }
-        #demos div > div {
-            margin: 20px 0;
-    }
-    .vertical-line {
-            height: 200px;/* Adjust height to fit mobile */
-        }
-
-        @media (max-width: 768px) {
-    #Demo-Part-1 > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    #Demo-Part-1 .vertical-line,
-    #Demo-Part-1 div[style*="height: 2px"] {
-        display: none;
-    }
-
-    #Demo-Part-1 div > div {
-        margin: 20px 0;
-    }
-}
-
-</style>
 
 
 
@@ -1839,7 +1825,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <img src="Blog_Image_5.webp" alt="AI Blogs" style="width: 100%; height: auto; margin-bottom: 20px;">
     <h3 style="color: #FFFFFF;">Why Are Big Companies Embracing AI? And Why Aren't You?</h3>
     <h4 style="color: #A52A2A; font-size: 17px;">
-        From tech giants like Google and Amazon to financial powerhouses such as JP Morgan, AI is being used to streamline operations, enhance customer experiences, and create smarter products...
+        From tech giants to financial powerhouses, AI is being used to streamline operations, enhance customer experiences, and create smarter products...
     </h4>
     <button class="read-more-btn" onclick="openOverlay(5)" style="padding: 10px 20px; background-color: #ff7f00; color: #FFFFFF; border: none; border-radius: 12px; cursor: pointer;">Read More</button>
 </div>
@@ -1899,7 +1885,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <img src="Blog_Image_7.png" alt="AI Blogs" style="width: 100%; height: auto; margin-bottom: 20px;">
     <h3 style="color: #FFFFFF;">Why Your Business Needs AI Now...</h3>
     <h4 style="color: #A52A2A; font-size: 17px;">
-        If your business isn’t leveraging AI, you’re likely spending more time, energy, and money on tasks that could be automated. And as your competitors grow, you risk losing market share!
+        If your business isn’t leveraging AI, then as your competitors grow, you'll risk losing market share!
     </h4>
     <button class="read-more-btn" onclick="openOverlay(7)" style="padding: 10px 20px; background-color: #ff7f00; color: #FFFFFF; border: none; border-radius: 12px; cursor: pointer;">Read More</button>
 </div>
@@ -2227,7 +2213,7 @@ Visit us at www.assetflowautomations.com to get started.
 
         // Show the next round
         const nextBlogs = document.getElementById(`blogs-round-${currentRound}`);
-        setTimeout(() => {
+            setTimeout(() => {
             nextBlogs.classList.remove("hidden");
         }, 500); // Matches the transition duration
 
