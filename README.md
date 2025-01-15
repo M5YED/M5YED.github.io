@@ -10,8 +10,9 @@ Our goal is simple: to give our clients the gift of time. We believe that time i
 
 ## Services Offered
 
-- **Document Automation Systems**: Custom solutions for handling data, sending emails, and streamlining business workflows.
-- **Consultation & Service Plans**: We offer full-service management plans, where we not only create but also manage and maintain the automation systems for our clients.
+- **Micro Automation Systems**: Robust systems built to handle one or a few functions such as sending emails and answering FAQ's.
+- **Macro Automation Systems**: Undisputable, autonomous systems built to handle multiple functions such as checking stock quantities, contacting suppliers for restocking,making pre-set payments for restocks, alerting managers for scheduled restocks, alerting teams of stock delivery dates/times and alerting team members upon the arrival of stocks.
+- **Consultation & Service(Management) Plans**: We offer full-service management plans, where we not only create but also manage and maintain the automation systems for our clients.
   
 ## Target Audience
 
@@ -42,8 +43,9 @@ We help these businesses models save time, reduce administrative workload, and i
 ## Installation & Setup
 
 1. **Initial Consultation**: We begin by understanding your needs and creating a tailored automation system.
-2. **System Setup**: We provide a run-through/tutorial to guide you through the setup and ensure smooth integration.
-3. **Ongoing Support**: We offer support services for troubleshooting and managing your automation system as needed.
+2. **Documentation**: We provide you with an overview of the system as well assetting clear expectations of the service we will provide to you and your cooperation in the project.
+3. **System Setup**: We provide a run-through/tutorial to guide you through the setup and ensure smooth integration.
+4. **Ongoing Support**: We offer support services for troubleshooting and managing your automation system as needed.
 
 ## License
 
