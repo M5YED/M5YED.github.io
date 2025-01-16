@@ -1645,16 +1645,36 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
                         try {
                             window.voiceflow.chat.proactive.push({ 
                                 type: 'text', 
-                                payload: { message: "Hey, hope you didn't miss me here" }
+                                payload: { message: "Want to speak with the team?" }
                             });
                         } catch (error) {
                             console.error("Error displaying proactive message:", error);
                         }
                     }, 10000); // Delay of 10 seconds
+
+                    // Second Message after an additional 5 seconds
+                    setTimeout(() => {
+                        try {
+                            window.voiceflow.chat.proactive.push({
+                                type: 'text',
+                                payload: { message: 'Just say: "put me on a live chat!"' }
+                            });
+                        } catch (error) {
+                            console.error("Error displaying second proactive message:", error);
+                        }
+                    }, 15000); // 10 + 5 seconds total
+
+                    // Remove all proactive messages after 15 seconds
+                    setTimeout(() => {
+                        try {
+                            window.voiceflow.chat.proactive.clear();
+                        } catch (error) {
+                            console.error("Error clearing proactive messages:", error);
+                        }
+                    }, 30000);
                 }
             }).catch(err => console.error("Error loading Voiceflow chat:", err));
         };
-
         v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
         v.type = "text/javascript"; 
         s.parentNode.insertBefore(v, s);
