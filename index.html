@@ -281,25 +281,7 @@
 
     /* Glow effect on hover */
     .glow-button:hover {
-        box-shadow: 0 0 15px #A52A2A, 0 0 30px #A52A2A; /* Glowing effect */
-        transform: scale(1.05); /* Slightly enlarges the button */
-    }
-        
-    /* Button styling */
-    .glow-button2 {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #ff7f00;
-        color: #FFFFFF;
-        border: none;
-        cursor: pointer;
-        margin-top: 20px;
-        transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth effect */
-    }
-
-    /* Glow effect on hover */
-    .glow-button2:hover {
-        box-shadow: 0 0 15px #054708, 0 0 30px #054708; /* Glowing effect */
+        box-shadow: 0 0 15px 5px #A52A2A, 0 0 30px 10px #A52A2A; /* Glowing effect */
         transform: scale(1.05); /* Slightly enlarges the button */
     }
 
@@ -868,6 +850,7 @@
         <a href="https://documentation.assetflowautomations.com/2.0">Documents 2.0</a>
         <br>
         <h3 style="font-size: 20px;">Other</h3>
+        <a href="https://media.assetflowautomations.com/blogs/">Blogs</a>
         <a href="https://www.assetflowautomations.com/use-cases/">Use Cases</a>
         <a href="https://ratings.assetflowautomations.com/">Reviews</a>        
         <a href="https://uk.trustpilot.com/review/assetflowautomations.com?utm_medium=trustbox&utm_source=TrustBoxReviewCollector">Rate Us</a>        
@@ -1935,13 +1918,14 @@ document.addEventListener('DOMContentLoaded', () => {
     <button class="read-more-btn" onclick="openOverlay(9)" style="padding: 10px 20px; background-color: #ff7f00; color: #FFFFFF; border: none; border-radius: 12px; cursor: pointer;">Read More</button>
 </div>
 </div>
-<!--More blogs starts here-->
-
-<!--More blogs ends here-->
-
 <div class="blogs hidden" id="blogs-round-4">
 <!-- Final Blog page -->
-    <center><h2 style="color: #FFFFFF; font-size: 40px;">COMING SOON!</h2></center>
+    <div style="display: default; align-items: columns; text-align: center;">
+    <center><h2 style="color: #FFFFFF; font-size: 40px;">Want to see more?</h2></center>
+    <center><h1 style="color: #FFFFFF; font-size: 38px;">Visit our blogs page below</h1></center>
+    <button class="glow-button" onclick="window.location.href='https://media.assetflowautomations.com/blogs/'">Blogs Page</button>
+    <br><br><br><br>
+    </div>
 </div>
 </div>
 
