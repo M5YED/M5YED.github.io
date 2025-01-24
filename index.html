@@ -943,46 +943,6 @@
             }
         }, 2000); // 2-second intro display
     });
-
-    document.getElementById('quicksupport').addEventListener('click', () => {
-    (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
-            // Initialize Voiceflow chat
-            window.voiceflow.chat.load({
-                verify: { projectID: '672f9a87dd74c835a2761c60' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production',
-                showInitialMessage: false,
-                showLauncher: false // Keep the launcher hidden
-            }).then(() => {
-                console.log('Voiceflow chat loaded successfully.');
-
-                // Open the chat programmatically when the button is clicked
-                window.voiceflow.chat.open();
-                console.log('Chat opened.');
-
-                // Ensure the launcher is removed in case it's injected
-                const removeLauncher = () => {
-                    const launcher = document.querySelector('.vf-chat-launcher');
-                    if (launcher) {
-                        launcher.remove();
-                        console.log('Launcher removed.');
-                    }
-                };
-
-                // Run the removal function immediately and periodically
-                removeLauncher();
-                setInterval(removeLauncher, 1000);
-            }).catch((error) => {
-                console.error('Error loading Voiceflow chat:', error);
-            });
-        };
-        v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs'; // Load Voiceflow widget
-        v.type = 'module'; // Ensure the script loads as a module
-        s.parentNode.insertBefore(v, s); // Insert the script into the DOM
-    })(document, 'script');
-});
     
 // List of fruit names
 const fruits = [
@@ -1176,6 +1136,47 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+<!--<script>
+document.getElementById('quicksupport').addEventListener('click', () => {
+    (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+            // Initialize Voiceflow chat
+            window.voiceflow.chat.load({
+                verify: { projectID: '6792db7d018b19e306765623' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'development',
+                showInitialMessage: false,
+                showLauncher: false // Keep the launcher hidden
+            }).then(() => {
+                console.log('Voiceflow chat loaded successfully.');
+
+                // Open the chat programmatically when the button is clicked
+                window.voiceflow.chat.open();
+                console.log('Chat opened.');
+
+                // Ensure the launcher is removed in case it's injected
+                const removeLauncher = () => {
+                    const launcher = document.querySelector('.vf-chat-launcher');
+                    if (launcher) {
+                        launcher.remove();
+                        console.log('Launcher removed.');
+                    }
+                };
+
+                // Run the removal function immediately and periodically
+                removeLauncher();
+                setInterval(removeLauncher, 1000);
+            }).catch((error) => {
+                console.error('Error loading Voiceflow chat:', error);
+            });
+        };
+        v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs'; // Load Voiceflow widget
+        v.type = 'module'; // Ensure the script loads as a module
+        s.parentNode.insertBefore(v, s); // Insert the script into the DOM
+    })(document, 'script');
+});
+</script>-->
 <script src="script.js" defer></script>
 
 
@@ -1361,7 +1362,7 @@ document.getElementById('Automated-Reporting-System').addEventListener('click', 
                 console.error('Error loading Voiceflow chat:', error);
             });
         };
-        v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs'; // Load Voiceflow widget
+        v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs'; // Load Voiceflow widget
         v.type = 'module'; // Ensure the script loads as a module
         s.parentNode.insertBefore(v, s); // Insert the script into the DOM
     })(document, 'script');
@@ -1408,7 +1409,6 @@ document.getElementById('Automated-Reporting-System').addEventListener('click', 
 <button id="Email-Sending-System" class="glow-button">
     Try Demo
 </button>
-            
 <script>
 document.getElementById('Email-Sending-System').addEventListener('click', () => {
     (function(d, t) {
@@ -1444,7 +1444,7 @@ document.getElementById('Email-Sending-System').addEventListener('click', () => 
                 console.error('Error loading Voiceflow chat:', error);
             });
         };
-        v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs'; // Load Voiceflow widget
+        v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs'; // Load Voiceflow widget
         v.type = 'module'; // Ensure the script loads as a module
         s.parentNode.insertBefore(v, s); // Insert the script into the DOM
     })(document, 'script');
@@ -1517,7 +1517,7 @@ document.getElementById('Appointment-Booking-System').addEventListener('click', 
                 console.error('Error loading Voiceflow chat:', error);
             });
         };
-        v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs'; // Load Voiceflow widget
+        v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs'; // Load Voiceflow widget
         v.type = 'module'; // Ensure the script loads as a module
         s.parentNode.insertBefore(v, s); // Insert the script into the DOM
     })(document, 'script');
@@ -1599,7 +1599,7 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
                 console.error('Error loading Voiceflow chat:', error);
             });
         };
-        v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs'; // Load Voiceflow widget
+        v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs'; // Load Voiceflow widget
         v.type = 'module'; // Ensure the script loads as a module
         s.parentNode.insertBefore(v, s); // Insert the script into the DOM
     })(document, 'script');
@@ -1663,13 +1663,13 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
-<!--<script type="text/javascript">
+<script type="text/javascript">
     // Loading the Voiceflow widget asynchronously
     (function(d, t) {
         var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
         v.onload = function() {
             window.voiceflow.chat.load({
-                verify: { projectID: '672f9a87dd74c835a2761c60' }, // AFA Voiceflow project ID
+                verify: { projectID: '6792db7d018b19e306765623' }, // AFA Voiceflow project ID
                 url: 'https://general-runtime.voiceflow.com',
                 versionID: 'production'
             }).then(() => {
@@ -1715,7 +1715,7 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
         v.type = "text/javascript"; 
         s.parentNode.insertBefore(v, s);
     })(document, 'script');
-</script>-->
+</script>
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
@@ -1759,19 +1759,6 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
         Here at AssetFlow Automations, we specialise in making Macro-Systems that perform different roles from the admin sector. We use advanched technology to build systems that carry out tasks that require cross-posting on external platforms; such as Google Sheets and Google Docks.
     <br>
     <br>
-<script type="text/javascript">
-  (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '6792db7d018b19e306765623' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production'
-        });
-      }
-      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
-</script>
     <br>
     <br>
     </p>
@@ -2558,15 +2545,15 @@ Find us at <a href="https://www.assetflowautomations.com/" style="color: #080027
     <!-- End TrustBox widget -->
 
     <!-- Voiceflow Web Chat Widget Script -->
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
       (function(d, t) {
         var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
         v.onload = function() {
           // Initialize the Voiceflow Web Chat widget
           window.voiceflow.chat.load({
-            verify: { projectID: '672f9a87dd74c835a2761c60' },
+            verify: { projectID: '6792db7d018b19e306765623' },
             url: 'https://general-runtime.voiceflow.com',
-            versionID: 'production'
+            versionID: 'development'
           }).then(() => {
             // Add event listener to the "Subscribe" button
             document.getElementById('SubscribeButton').addEventListener('click', (event) => {
@@ -2602,11 +2589,11 @@ Find us at <a href="https://www.assetflowautomations.com/" style="color: #080027
             console.error('Error loading the Voiceflow chat widget:', error);
           });
         };
-        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
         v.type = "text/javascript";
         s.parentNode.insertBefore(v, s);
       })(document, 'script');
-    </script>
+    </script>-->
 
     <!-- JavaScript for Airtable Integration -->
     <script>
