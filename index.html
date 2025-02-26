@@ -860,57 +860,20 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
 <script type="text/javascript">
-    // Loading the Voiceflow widget asynchronously
-    (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
-            window.voiceflow.chat.load({
-                verify: { projectID: '67b7e9e38001611075dd287c' }, // Agent AFA
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production'
-            }).then(() => {
-                window.voiceflow.chat.proactive.clear(); // Clear any previous proactive messages
-
-                // Check if the user has already pressed the launcher
-                if (!localStorage.getItem('voiceflow_launcherPressed')) {
-                    setTimeout(() => {
-                        try {
-                            window.voiceflow.chat.proactive.push({ 
-                                type: 'text', 
-                                payload: { message: "Want to speak with the team?" }
-                            });
-                        } catch (error) {
-                            console.error("Error displaying proactive message:", error);
-                        }
-                    }, 10000); // Delay of 10 seconds
-
-                    // Second Message after an additional 5 seconds
-                    setTimeout(() => {
-                        try {
-                            window.voiceflow.chat.proactive.push({
-                                type: 'text',
-                                payload: { message: 'Just say: "put me on a live chat!"' }
-                            });
-                        } catch (error) {
-                            console.error("Error displaying second proactive message:", error);
-                        }
-                    }, 15000); // 10 + 5 seconds total
-
-                    // Remove all proactive messages after 15 seconds
-                    setTimeout(() => {
-                        try {
-                            window.voiceflow.chat.proactive.clear();
-                        } catch (error) {
-                            console.error("Error clearing proactive messages:", error);
-                        }
-                    }, 30000);
-                }
-            }).catch(err => console.error("Error loading Voiceflow chat:", err));
-        };
-        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
-        v.type = "text/javascript"; 
-        s.parentNode.insertBefore(v, s);
-    })(document, 'script');
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '67b7e9e38001611075dd287c' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production', 
+          voice: { 
+            url: "https://runtime-api.voiceflow.com" 
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
 </script>
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
@@ -933,6 +896,22 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
 <!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA--><!--AFA-->
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '67ba6f84f2a0a0c3b2887511' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production', 
+          voice: { 
+            url: "https://runtime-api.voiceflow.com" 
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
 </div>
 </section>
 
