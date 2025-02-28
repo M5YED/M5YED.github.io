@@ -869,6 +869,9 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
           versionID: 'production', 
           voice: { 
             url: "https://runtime-api.voiceflow.com" 
+          },
+          assistant: {
+            persistence: 'sessionStorage' // Configure persistence here
           }
         });
       }
@@ -901,12 +904,15 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
       v.onload = function() {
         window.voiceflow.chat.load({
-          verify: { projectID: '67ba6f84f2a0a0c3b2887511' },
+          verify: { projectID: '67ba6f84f2a0a0c3b2887511' }, // Agent AFA-2eco
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'production', 
           voice: { 
-            url: "https://runtime-api.voiceflow.com" 
-          }
+            url: "https://runtime-api.voiceflow.com"
+          },
+          assistant: {
+            persistence: 'memory' // Configure persistence here
+         }
         });
       }
       v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
