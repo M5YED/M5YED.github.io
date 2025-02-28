@@ -72,12 +72,13 @@
         <a href="https://pricing.assetflowautomations.com/">Pricing</a>
         <br>
         <h3 style="font-size: 20px;">Plans</h3>
-        <a href="https://service.assetflowautomations.com/purchaser">Hand-Off</a>
-        <a href="https://service.assetflowautomations.com/purchaser/management">Management</a>        
+        <a href="https://service.assetflowautomations.com/purchaser/">Hand-Off</a>
+        <a href="https://service.assetflowautomations.com/purchaser/management/">Management</a>        
         <br>
         <h3 style="font-size: 20px;">Documentation</h3>
         <a href="https://documentation.assetflowautomations.com/">Documents</a>
         <a href="https://documentation.assetflowautomations.com/2.0">Documents 2.0</a>
+        <a href="https://afa.assetflowautomations.com/">Agent AFA</a>
         <br>
         <h3 style="font-size: 20px;">Other</h3>
         <a href="https://media.assetflowautomations.com/blogs/">Blogs</a>
@@ -339,7 +340,7 @@ document.getElementById('quicksupport').addEventListener('click', () => {
         v.onload = function() {
             // Initialize Voiceflow chat
             window.voiceflow.chat.load({
-                verify: { projectID: '67b7e9e38001611075dd287c' }, // Agent AFA
+                verify: { projectID: '67c238c06a3a93a7c76883c7' }, // Agent AFA
                 url: 'https://general-runtime.voiceflow.com',
                 versionID: 'development',
                 showInitialMessage: false,
@@ -864,7 +865,7 @@ document.getElementById('FAQ-System').addEventListener('click', () => {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
       v.onload = function() {
         window.voiceflow.chat.load({
-          verify: { projectID: '67b7e9e38001611075dd287c' },
+          verify: { projectID: '67c238c06a3a93a7c76883c7' }, // Agent AFA
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'production', 
           voice: { 
@@ -1733,7 +1734,7 @@ Find us at <a href="https://www.assetflowautomations.com/" style="color: #080027
       try {
         // Initialize Voiceflow Web Chat widget
         await window.voiceflow.chat.load({
-          verify: { projectID: '67b7e9e38001611075dd287c' }, // Agent AFA
+          verify: { projectID: '67c238c06a3a93a7c76883c7' }, // Agent AFA
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'development',
           showInitialMessage: false,
